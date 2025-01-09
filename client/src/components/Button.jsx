@@ -6,9 +6,10 @@ function getFunction(onClickFunction, type) {
 }
 
 export default function Button({ onClickFunction, type }) {
+
     return (
         <div>
-            <button onClick={() => getFunction(onClickFunction, type)}>Toggle Page</button>
+            <button onClick={() => getFunction(onClickFunction, type)}>{type.toUpperCase()}</button>
         </div>
     )
 }
