@@ -5,9 +5,10 @@ import TopBar from './TopBar'
 const HomePage = () => {
   return (
     <div>
-        HomePage
-        <SideBar />
+        <h1>HomePage</h1>
         <TopBar />
+        <SideBar />
+        <input></input>
     </div>
   )
 }
