@@ -6,9 +6,12 @@ import PriorityBar from './PriorityBar'
 import ResultDisplay from './ResultDisplay'
 import HiddenBar from './HiddenBar'
 
+import styles from './page.module.css'
+
 const ResultPage = () => {
   return (
-    <div><h1>ResultPage</h1> <br />
+    <div className={styles.container}>
+        <h1>ResultPage</h1> <br />
         <Link href="./">ClickMeToGoHome</Link>
         <HiddenBar />
         <GenerateBar />
