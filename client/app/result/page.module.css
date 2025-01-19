@@ -1,7 +1,13 @@
 .container {
     width: 100vw;
-    height: 100vh;
-
-    /* used for testing */
-    /* background-color: lightblue; */
+    height: 100vw;
+}
+.topBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.priorityAndDisplay {
+    display: flex;
+    margin-top: 1rem;
 }
