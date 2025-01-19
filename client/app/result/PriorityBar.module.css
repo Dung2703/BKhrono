@@ -1,65 +1,89 @@
 .container {
-    width: 12rem;
-    height: 26.5rem;
-    border: 1px solid black;
+    width: 60%;
+    height: 80%;
+    border: 2px solid black;
     border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-left: 6rem;
-    margin-right: 2rem;
+    margin: 5%;
 }
+
 .top {
     width: 100%;
+    height: 12%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 2rem;
+    /* Uncomment below to use background color for debugging */
+    /* background-color: red; */
 }
+
 .top button {
-    height: 1.2rem;
-    width: 7.7rem;
+    width: 80%;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    background-color: #f0f0f0;
+    transition: background-color 0.3s, transform 0.2s;
 }
+
+.top button:hover {
+    background-color: #e0e0e0; /* Slightly darker background on hover */
+    transform: scale(1.05);   /* Slight zoom effect */
+}
+
+
 .bottom {
     width: 100%;
-    margin-top: 1.86rem;
+    height: 88%;
     display: flex;
-    padding: 0 1.24rem;
+    justify-content: center;
+    align-items: center;
+    /* Uncomment below to use background color for debugging */
+    /* background-color: red; */
 }
+
+.dateAndTime {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    justify-content: space-between;
+    /* Uncomment below to use background color for debugging */
+    /* background-color: green; */
+}
+
 .date, .time {
+    width: 48%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    text-align: center;
 }
-.date div {
+
+.date button, .time button {
+    width: 100%;
+    height: 100%;
     cursor: pointer;
-    height: 2.49rem;
-    width: 4.29rem;
-    margin-right: 0.435rem;
     border: 1px solid black;
     border-radius: 8px;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: background-color 0.3s, transform 0.2s;
 }
-.time div {
-    cursor: pointer;
-    height: 1.25rem;
-    width: 4.29rem;
-    margin-left: 0.435rem;
-    border: 1px solid black;
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 .chosenDate {
-    background-color: yellow;
+    background-color: lightgreen;
 }
+
 .activeDate {
-    background-color: blue;
+    background-color: lightblue;
 }
+
 .activeTime {
-    background-color: green;
+    background-color: lightgreen;
 }

@@ -124,40 +124,43 @@ const PriorityBar = () => {
         <button>Prior</button>
       </div>
       <div className={styles.bottom}>
-        <div className={styles.date}>
-          {
-            dates.map((date, index) => (
-              <div 
-              key={index} 
-              className={`${styles.date} 
-              ${currentDate === date ? styles.activeDate : ''}
-              ${updateLayoutDay(date) ? styles.chosenDate : ''}`}
-              onClick={() => {
-                  setCurrentDate(date)
+        <div className={styles.dateAndTime}>
+          <div className={styles.date}>
+            {
+              dates.map((date, index) => (
+                <button 
+                key={index} 
+                className={`${styles.date} 
+                ${currentDate === date ? styles.activeDate : ''}
+                ${updateLayoutDay(date) ? styles.chosenDate : ''}`}
+                onClick={() => {
+                    setCurrentDate(date)
+                  }
                 }
-              }
-              >{date}
-              </div>
-            ))
-          }
-        </div>
-        <div className={styles.time}>
-          {
-            times.map((time, index) => (
-              <div 
-              key={index} 
-              className={`${styles.hour} 
-              ${checkExistTime(time) ? styles.activeTime : ''}`}
-              onClick={() => {
-                  addTime(time)
+                >{date}
+                </button>
+              ))
+            }
+          </div>
+          <div className={styles.time}>
+            {
+              times.map((time, index) => (
+                <button 
+                key={index} 
+                className={`${styles.hour} 
+                ${checkExistTime(time) ? styles.activeTime : ''}`}
+                onClick={() => {
+                    addTime(time)
+                  }
                 }
-              }
-              >{time}
-              </div>
-            ))
-          }
+                >{time}
+                </button>
+              ))
+            }
+          </div>
         </div>
       </div>
+      {/* <div className={styles.top}></div> */}
     </div>
   )
 }
