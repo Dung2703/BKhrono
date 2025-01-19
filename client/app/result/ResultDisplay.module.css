@@ -1,9 +1,8 @@
 .container {
-    width: 70%;
-    height: 72%; 
+    width: 50rem; 
     background-color: #f5f5dc; 
-    font-size: 1.2rem; 
-    border: 1px solid #ddd; 
+    font-size: 1rem; 
+    border: 1px solid black; 
     border-radius: 8px; 
     padding: 1%; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 

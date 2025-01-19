@@ -13,10 +13,22 @@ const ResultPage = () => {
     <div className={styles.container}>
         <h1>ResultPage</h1> <br />
         <Link href="./">ClickMeToGoHome</Link>
-        <HiddenBar />
-        <GenerateBar />
-        <PriorityBar />
-        <ResultDisplay />
+        <div className={styles.topBar}>
+          <div className={styles.hiddenBar}>
+            <HiddenBar />
+          </div>
+          <div className={styles.generateBar}>
+            <GenerateBar />
+          </div>
+        </div>
+        <div className={styles.priorityAndDisplay}>
+          <div className={styles.priorityBar}>
+            <PriorityBar />
+          </div>
+          <div className={styles.resultDisplay}>
+            <ResultDisplay />
+          </div>
+        </div>
     </div>
   )
 }

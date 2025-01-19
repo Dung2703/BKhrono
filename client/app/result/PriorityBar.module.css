@@ -1,0 +1,65 @@
+.container {
+    width: 12rem;
+    height: 26.5rem;
+    border: 1px solid black;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 6rem;
+    margin-right: 2rem;
+}
+.top {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+.top button {
+    height: 1.2rem;
+    width: 7.7rem;
+}
+.bottom {
+    width: 100%;
+    margin-top: 1.86rem;
+    display: flex;
+    padding: 0 1.24rem;
+}
+.date, .time {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.date div {
+    cursor: pointer;
+    height: 2.49rem;
+    width: 4.29rem;
+    margin-right: 0.435rem;
+    border: 1px solid black;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.time div {
+    cursor: pointer;
+    height: 1.25rem;
+    width: 4.29rem;
+    margin-left: 0.435rem;
+    border: 1px solid black;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.chosenDate {
+    background-color: yellow;
+}
+.activeDate {
+    background-color: blue;
+}
+.activeTime {
+    background-color: green;
+}
