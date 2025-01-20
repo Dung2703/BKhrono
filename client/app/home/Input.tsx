@@ -15,7 +15,7 @@ const Input: React.FC<InputProps> = ({ addCourse }) => {
     addCourse(pasteData)
     setAllPastedText((prevText) => prevText ? prevText + '\n' + pasteData : pasteData)
     setNewCourse('')
-    event.preventDefault() // Prevent the default paste behavior
+    event.preventDefault()
   }
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -24,7 +24,7 @@ const Input: React.FC<InputProps> = ({ addCourse }) => {
 
   const handleAddCourse = () => {
     addCourse(newCourse)
-    setNewCourse('') // Clear the input field after adding the course
+    setNewCourse('')
   }
 
   const saveTextToFile = () => {
