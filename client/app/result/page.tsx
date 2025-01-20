@@ -11,12 +11,20 @@ import styles from './page.module.css'
 const ResultPage = () => {
   return (
     <div className={styles.container}>
-        <h1>ResultPage</h1> <br />
-        <Link href="./">ClickMeToGoHome</Link>
-        <HiddenBar />
-        <GenerateBar />
+      <div className={styles.leftSide}>
         <PriorityBar />
-        <ResultDisplay />
+      </div>
+      <div className={styles.rightSide}>
+        <div className={styles.topBar}>
+          <HiddenBar />
+          <GenerateBar />
+        </div>
+        <div className={styles.resultDisplay}>
+          <ResultDisplay />
+        </div>
+      </div>
+      {/* <h1>ResultPage</h1> <br />
+      <Link href="./">ClickMeToGoHome</Link> */}
     </div>
   )
 }
