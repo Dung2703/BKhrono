@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: '10px';
+}
+
+.box {
+    border: 1px solid #000;
+    padding: 10px;
+    text-align: center;
+}
+
+.box a {
+    padding: 10px;
+    text-decoration: none;
+    color: #000;
+}

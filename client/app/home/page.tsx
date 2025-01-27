@@ -16,10 +16,14 @@ const HomePage = () => {
   return (
     <div>
       <h1>HomePage</h1>
-      <TopBar />
-      <div className="content">
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+       <TopBar />
+      </div>
+      <div className="content" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
         <SideBar items={courses} />
-        <Input addCourse={addCourse}></Input>
+        <div style={{ marginLeft: '50px' }}>
+         <Input addCourse={addCourse}></Input>
+        </div>
       </div>
     </div>
   )
