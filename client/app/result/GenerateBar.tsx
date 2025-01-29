@@ -1,14 +1,17 @@
-import React from 'react'
+"use client";
+import React, { useState } from 'react';
+import styles from './GenerateBar.module.css';
 
 const GenerateBar = () => {
+  const handleClick = () => {
+    window.history.back(); 
+  };
+
   return (
-    <div>
-        <label>
-            <button>extend left</button>
-            <button>generate</button>
-        </label>
-    </div>
-  )
-}
+    <button className={styles.fileButton} onClick={handleClick}>&gt;
+    </button>
+  );
+};
+
 
 export default GenerateBar
