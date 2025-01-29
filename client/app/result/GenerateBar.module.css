@@ -1,0 +1,16 @@
+.fileButton {
+    position: fixed;  
+    top: 40px;        
+    right: 40px;      
+    padding: 10px 20px;
+    border: 1px solid black;
+    border-radius: 8px;
+    background-color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.fileButton:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.05);
+}
