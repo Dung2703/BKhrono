@@ -58,3 +58,8 @@
     background-color: white;
     cursor: pointer;
 }
+
+.fileButton:hover {
+    background-color: lightgray;
+    transform: scale(1.05);
+}
