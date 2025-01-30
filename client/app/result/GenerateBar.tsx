@@ -14,4 +14,4 @@ const GenerateBar = () => {
 };
 
 
-export default GenerateBar
+export default GenerateBar;
