@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 
-import GenerateBar from './GenerateBar'
+
 import PriorityBar from './PriorityBar'
 import ResultDisplay from './ResultDisplay'
 import HiddenBar from './HiddenBar'
@@ -17,7 +17,6 @@ const ResultPage = () => {
       <div className={styles.rightSide}>
         <div className={styles.topBar}>
           <HiddenBar />
-          <GenerateBar />
         </div>
         <div className={styles.resultDisplay}>
           <ResultDisplay />
