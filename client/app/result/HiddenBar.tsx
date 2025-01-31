@@ -1,10 +1,13 @@
-"use client";
-import React, { useState } from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import styles from "./HiddenBar.module.css";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 
-const HiddenBar = () => {
-  const [isVisible, setIsVisible] = useState(false);
+interface HiddenBarProps {
+  isVisible: boolean;
+  setIsVisible: Dispatch<SetStateAction<boolean>>;
+}
+
+const HiddenBar: React.FC<HiddenBarProps> = ({ isVisible, setIsVisible }) => {
   const [parent] = useAutoAnimate();
 
   const handleClick = () => {
@@ -14,13 +17,18 @@ const HiddenBar = () => {
   return (
     <>
       {/* Khung chứa file nằm giữa trên cùng */}
-      <div ref={parent} className={`${styles.filesContainer} ${isVisible ? styles.show : styles.hide}`}>
+      <div
+        ref={parent}
+        className={`${styles.filesContainer} ${
+          isVisible ? styles.show : styles.hide
+        }`}
+      >
         <button className={styles.fileButton}>.pdf file</button>
         <button className={styles.fileButton}>.txt file</button>
         <button className={styles.fileButton}>.xlsx file</button>
       </div>
 
-      {/* Nút mở menu ở góc phải trên cùng */}
+      {/* Nút mở menu */}
       <div className={styles.hiddenBar}>
         <button className={styles.toggleButton} onClick={handleClick}>
           {isVisible ? "<" : ">"}
@@ -31,3 +39,5 @@ const HiddenBar = () => {
 };
 
 export default HiddenBar;
+
+

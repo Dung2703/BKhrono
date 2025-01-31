@@ -1,14 +1,16 @@
+"use client";
 import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
 
 
 import PriorityBar from './PriorityBar'
 import ResultDisplay from './ResultDisplay'
 import HiddenBar from './HiddenBar'
-
+import Generate from "./Generate"
 import styles from './page.module.css'
 
 const ResultPage = () => {
+  const [isVisible, setIsVisible] = useState(false);
   return (
     <div className={styles.container}>
       <div className={styles.leftSide}>
@@ -16,11 +18,15 @@ const ResultPage = () => {
       </div>
       <div className={styles.rightSide}>
         <div className={styles.topBar}>
-          <HiddenBar />
+          <HiddenBar isVisible={isVisible} setIsVisible={setIsVisible} />
         </div>
         <div className={styles.resultDisplay}>
           <ResultDisplay />
         </div>
+        <Generate isVisible={isVisible} />
+        <button onClick={() => setIsVisible(!isVisible)}>
+          Toggle Generate Button
+        </button>
       </div>
       {/* <h1>ResultPage</h1> <br />
       <Link href="./">ClickMeToGoHome</Link> */}

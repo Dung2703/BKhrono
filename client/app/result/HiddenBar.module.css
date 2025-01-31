@@ -1,14 +1,16 @@
 .hiddenBar {
-    position: absolute;
+    position: fixed;
     top: 10px;
     right: 20px;
     display: flex;
     align-items: center;
-    transition: all 0.5s ease-out;
 }
 
-/* Nút toggle mở/đóng */
+/* Nút toggle mở/đóng - Giữ nguyên vị trí */
 .toggleButton {
+    position: fixed;
+    top: 10px;
+    right: 117px; /* Giữ nguyên vị trí */
     padding: 10px 15px;
     cursor: pointer;
     background-color: white;
@@ -19,12 +21,11 @@
     transition: transform 0.3s ease-in-out;
 }
 
-/* Container chứa file, mặc định ẩn */
+/* Container chứa file */
 .filesContainer {
-    position: absolute;
-    top: -50px; /* Ẩn phía trên màn hình */
-    left: 50%;
-    transform: translate(-50%, 0);
+    position: fixed;
+    top: 10px;
+    right: -250px; /* Mặc định ẩn ngoài màn hình */
     display: flex;
     gap: 10px;
     padding: 15px;
@@ -32,21 +33,22 @@
     border-radius: 10px;
     background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: top 0.5s ease-out, opacity 0.5s ease-out, visibility 0.5s ease-out;
+    transition: right 0.5s ease-out, opacity 0.5s ease-out, visibility 0.5s ease-out;
     opacity: 0;
     visibility: hidden;
 }
 
-/* Khi hiển thị, đưa xuống chính giữa phía trên */
+/* Khi hiển thị */
 .filesContainer.show {
-    top: 10px;
+    right: 50%; /* Dịch ra giữa */
+    transform: translateX(50%);
     opacity: 1;
     visibility: visible;
 }
 
 /* Khi ẩn */
 .filesContainer.hide {
-    top: -50px;
+    right: -250px;
     opacity: 0;
     visibility: hidden;
 }
@@ -65,3 +67,5 @@
     background-color: lightgray;
     transform: scale(1.05);
 }
+
+
