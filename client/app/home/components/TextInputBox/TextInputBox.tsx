@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { saveAs } from 'file-saver'
 import { Volkhov } from 'next/font/google'
+import styles from './TextInputBox.module.css'
 
 interface InputProps {
   addCourse: (course: string) => void
@@ -33,33 +34,14 @@ const Input: React.FC<InputProps> = ({ addCourse }) => {
   }
 
   return (
-    <div className="input-container">
-        <style>
-        {`
-          .input-box::placeholder {
-            font-size: 50px;
-            color: black;
-          }
-        `}
-      </style>
-      <input
-        type="text"
-        placeholder="Paste each course here"
-        value={newCourse}
-        onChange={handleInputChange}
-        onPaste={handlePaste}
-        className="input-box"
-        style={{
-        width: '100vh',
-        height: '60vh',
-        borderRadius: '50px',
-        textAlign: 'center',
-        padding: '10px',
-        boxSizing: 'border-box',
-      }}
-      />
-      <button onClick={saveTextToFile}>Save All Pasted Text</button>
-    </div>
+    <input
+      type="text"
+      placeholder="Paste each course here"
+      value={newCourse}
+      onChange={handleInputChange}
+      onPaste={handlePaste}
+      className={styles.container}
+    />
   )
 }
 

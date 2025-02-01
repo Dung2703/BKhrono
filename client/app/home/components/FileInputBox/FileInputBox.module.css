@@ -1,0 +1,35 @@
+.container {
+    border: 3px solid black;
+    border-radius: 10px;
+    display: flex;
+    cursor: pointer;
+    background-color: var(--bgSoft);
+    width: 100%;
+    min-width: 40ch;
+}
+
+.button {
+    padding: 0.25em 0.5em;
+    font-size: 2rem;
+    border-right: 3px solid black;
+    color: var(--textSoft);
+    font-weight: bold;
+}
+
+.labelContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.label {
+    font-size: 2rem;
+    color: var(--textSoft);
+    font-weight: bold;
+}
+
+
+.input {
+    display: none;
+}

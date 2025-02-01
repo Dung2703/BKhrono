@@ -1,0 +1,50 @@
+.container {
+    display: flex;
+    padding: 1em;
+    min-height: 100vh;
+    overflow: auto;
+}
+
+.sidebar {
+    flex: 1;
+    display: flex;
+    justify-content: end;
+    padding: 1em;
+    /* background-color: blue; */
+}
+  
+.inputSection {
+    flex: 5;
+    padding: 1em;
+    width: 80rem;
+    display: flex;
+    flex-direction: column;
+    /* background-color: green;     */
+}
+  
+.fileInputBox {
+    flex: 0;
+    /* background-color: #fff; */
+}
+  
+.textInputBox {
+    flex: 1;
+    display: flex;
+    margin-top: 2em;
+    /* background-color: red; */
+}
+
+.buttonContainer {
+    padding: 1em;
+    /* background-color: yellow; */
+}
+
+.button {
+    padding: 0.25em 0.5em;
+    border: 3px solid black;
+    background-color: var(--bgSoft);
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 2rem;
+    color: var(--textSoft);
+}

@@ -1,0 +1,11 @@
+.container {
+    background-color: var(--bgSoft);
+    border: 3px solid black;
+    color: var(--textSoft);
+    font-weight: bold;
+    font-size: 1.8rem;
+    text-align: center;
+    border-radius: 10px;
+    width: 100%;
+    min-width: 25ch;
+}

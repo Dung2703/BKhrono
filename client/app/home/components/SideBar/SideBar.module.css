@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    border: 3px solid black;
+    border-radius: 15px;
+    background-color: var(--bgSoft);
+    height: 100%;
+}
+
+.header {
+    font-weight: bold;
+    font-size: 1.8rem;
+    padding: 1.2em;
+    text-align: center;
+    border-bottom: 3px solid black;
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+}
+
+.list {
+    padding: 1.2em;
+    font-size: 1.5rem;
+    gap: 1em;
+    font-weight: bold;
+    color: var(--textSoft);
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

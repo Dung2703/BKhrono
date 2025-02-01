@@ -3,10 +3,10 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 
 
-import PriorityBar from './PriorityBar'
-import ResultDisplay from './ResultDisplay'
-import HiddenBar from './HiddenBar'
-import Generate from "./Generate"
+import PriorityBar from './components/PriorityBar/PriorityBar'
+import ResultDisplay from './components/ResultDisplay/ResultDisplay'
+import HiddenBar from './components/HiddenBar/HiddenBar'
+import Generate from "./components/GenerateBar/Generate"
 import styles from './page.module.css'
 
 const ResultPage = () => {

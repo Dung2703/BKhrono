@@ -1,32 +1,37 @@
 'use client';
 import React, { useState } from 'react';
-import SideBar from './SideBar';
-import TopBar from './TopBar';
-import Input from './Input';
+import styles from './page.module.css';
+import SideBar from './components/SideBar/SideBar';
+import TextInputBox from './components/TextInputBox/TextInputBox';
+import FileInputBox from './components/FileInputBox/FileInputBox';
 
 const HomePage = () => {
-  const [courses, setCourses] = useState<string[]>([])
+  const [courses, setCourses] = useState<string[]>([]);
 
   const addCourse = (course: string) => {
     if (course.trim() !== '') {
-      setCourses((prevCourses) => [...prevCourses, course.trim()])
+      setCourses((prevCourses) => [...prevCourses, course.trim()]);
     }
-  }
+  };
 
   return (
-    <div>
-      <h1>HomePage</h1>
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-       <TopBar />
+    <div className={styles.container}>
+      <div className={styles.sidebar}>
+        <SideBar/>
       </div>
-      <div className="content" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-        <SideBar items={courses} />
-        <div style={{ marginLeft: '50px' }}>
-         <Input addCourse={addCourse}></Input>
+      <div className={styles.inputSection}>
+        <div className={styles.fileInputBox}>
+          <FileInputBox />
+        </div>
+        <div className={styles.textInputBox}>
+          <TextInputBox addCourse={addCourse} />
         </div>
       </div>
+      <div className={styles.buttonContainer}>
+        <button className={styles.button}>Continue</button>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;
