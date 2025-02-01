@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { saveAs } from 'file-saver'
-import { Volkhov } from 'next/font/google'
 import styles from './TextInputBox.module.css'
 
 interface InputProps {
@@ -11,15 +10,15 @@ const Input: React.FC<InputProps> = ({ addCourse }) => {
   const [newCourse, setNewCourse] = useState('')
   const [allPastedText, setAllPastedText] = useState('')
 
-  const handlePaste = (event: React.ClipboardEvent<HTMLInputElement>) => {
+  const handlePaste = (event: React.ClipboardEvent<HTMLTextAreaElement>) => {
     const pasteData = event.clipboardData.getData('text')
     addCourse(pasteData)
-    setAllPastedText((prevText) => prevText ? prevText + '\n' + pasteData : pasteData)
+    setAllPastedText((prevText) => (prevText ? prevText + '\n' + pasteData : pasteData))
     setNewCourse('')
     event.preventDefault()
   }
 
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setNewCourse(event.target.value)
   }
 
@@ -34,12 +33,10 @@ const Input: React.FC<InputProps> = ({ addCourse }) => {
   }
 
   return (
-    <input
-      type="text"
-      placeholder="Paste each course here"
+    <textarea
+      placeholder="Paste course data"
       value={newCourse}
       onChange={handleInputChange}
-      onPaste={handlePaste}
       className={styles.container}
     />
   )

@@ -20,7 +20,7 @@ const FileInputBox: React.FC = () => {
             <div className={styles.button}>+</div>
             <div className={styles.labelContainer}>
                 <div className={styles.label}>
-                    {fileName || "Paste .txt file here"}
+                    {fileName || "Paste .txt file"}
                     <input 
                         className={styles.input} 
                         type="file"
