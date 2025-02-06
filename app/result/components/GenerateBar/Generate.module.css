@@ -1,0 +1,88 @@
+.container {
+  display: flex;
+  background-color: white;
+  border-radius: 8px;
+  border: 3px solid black;
+  transition: transform .5s ease-out, opacity .5s ease-out, visibility .5s ease-out;
+}
+
+.toggleButton, .generateButton {
+  font-size: 1rem;
+  font-weight: bold;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.toggleButton {
+  padding: 1em;
+  border-right: 3px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  /* box-shadow: 5px 0 0 0 rgba(0, 0, 0, 0.05); */
+}
+
+.generateButton {
+  padding: 1em 2.5em 1em 0.5em;
+}
+
+/* .hide {
+  transform: translateX(50px);
+  opacity: 0;
+  visibility: hidden;
+} */
+
+/* .show {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+} */
+
+/* Red */
+@media screen and (max-width: 1400px) {
+  .toggleButton {
+    padding: 0.75em;
+  }
+  .generateButton {
+    padding: 0.75em 2em 0.75em 0.5em;
+  }
+}
+
+/* Green */
+@media screen and (max-width: 1024px) {
+  .toggleButton {
+    padding: 0.75em;
+  }
+  .generateButton {
+    padding: 0.75em 2em 0.75em 0.5em;
+  }
+}
+
+/* Yellow */
+@media screen and (max-width: 768px) {
+  .toggleButton, .generateButton {
+    font-size: 0.8rem;
+  }
+  .toggleButton {
+    padding: 0.5em;
+  }
+  .generateButton {
+    padding: 0.5em 1.5em 0.5em 0.25em;
+  }
+}
+
+/* Brown */
+@media screen and (max-width: 480px) {
+  .container {
+    border-width: 1px;
+  }
+  .toggleButton, .generateButton {
+    font-size: 0.5rem;
+  }
+  .toggleButton {
+    padding: 0.5em;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .generateButton {
+    padding: 0.5em 1.5em 0.5em 0.25em;
+  }
+}

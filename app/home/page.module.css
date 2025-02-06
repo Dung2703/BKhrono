@@ -6,15 +6,12 @@
 }
 
 .sidebar {
-    flex: 1;
     display: flex;
-    justify-content: end;
     padding: 4em 2em 2em 2em;
     /* background-color: blue; */
 }
 
 .inputSection {
-    flex: 5;
     padding: 2em;
     width: 80rem;
     display: flex;
@@ -22,10 +19,9 @@
     /* background-color: green; */
 }
 
-.fileInputBox {
-    flex: 0;
-    /* background-color: #fff; */
-}
+/* .fileInputBox {
+    background-color: #fff;
+} */
 
 .textInputBox {
     flex: 1;

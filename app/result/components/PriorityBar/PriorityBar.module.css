@@ -1,0 +1,149 @@
+.container {
+    border: 3px solid black;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    display: flex;
+    align-items: center;
+}
+
+/* .top {
+    font-weight: bold;
+    padding: 1em; 
+    background-color: yellow;
+}
+
+.top button {
+    padding: 0 1em;
+    font-size: 2rem;
+
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.top button:hover {
+    background-color: #e0e0e0; 
+    transform: scale(0.95);   
+} */
+
+
+.bottom {
+    display: flex;
+    gap: 1em;
+    padding: 1em;
+}
+
+.date, .time {
+    display: flex;
+    flex-direction: column;
+}
+
+.date button, .time button {
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.date button {
+    border: 3px solid black;
+    padding: 1em;
+    border-radius: 15px;
+}
+
+.time button {
+    flex: 1;
+    padding: 0 0.5em;
+    border: 2px solid grey;
+    border-radius: 10px;
+    white-space: nowrap;
+}
+
+.chosenDate {
+    background-color: lightgreen;
+}
+
+.activeDate {
+    background-color: lightblue;
+}
+
+.activeTime {
+    background-color: lightgreen;
+}
+
+/* Red */
+@media screen and (max-width: 1400px) {
+    .container {
+        border-radius: 40px;
+    }
+    .bottom {
+        padding: 0.75em;
+        gap: 0.75em;
+    }
+    .date button, .time button {
+        font-size: 1.125rem;
+    }
+}
+
+/* Green */
+@media screen and (max-width: 1024px) {
+    .container {
+        border-radius: 30px;
+    }
+    .bottom {
+        padding: 0.5em;
+        gap: 0.5em;
+    }
+    .date button, .time button {
+        font-size: 1rem;
+    }
+}
+
+/* Yellow */
+@media screen and (max-width: 768px) {
+    .container {
+        border-radius: 20px;
+    }
+    .bottom {
+        padding: 0.25em;
+        gap: 0.25em;
+    }
+    .date button, .time button {
+        font-size: 0.8rem;
+    }
+}
+
+/* Blue */
+@media screen and (max-width: 640px) {
+    .container {
+        border-radius: 20px;
+    }
+    .bottom {
+        padding: 0.25em;
+        gap: 0.25em;
+    }
+    .date button, .time button {
+        font-size: 0.65rem;
+    }
+}
+
+/* Brown */
+@media screen and (max-width: 480px) {
+    .container {
+        border-radius: 10px;
+        border: 1px solid black;
+    }
+    .bottom {
+        padding: 0;
+        gap: 0;
+    }
+    .date button, .time button {
+        font-size: 0.45rem;
+        border-width: 1px;
+    }
+}

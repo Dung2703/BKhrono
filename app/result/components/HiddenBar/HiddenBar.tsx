@@ -15,29 +15,21 @@ const HiddenBar: React.FC<HiddenBarProps> = ({ isVisible, setIsVisible }) => {
   };
 
   return (
-    <>
-      {/* Khung chứa file nằm giữa trên cùng */}
-      <div
-        ref={parent}
-        className={`${styles.filesContainer} ${
-          isVisible ? styles.show : styles.hide
-        }`}
+      <div ref={parent} 
+           className={`${styles.container} ${isVisible ? styles.show : styles.show}`}
       >
         <button className={styles.fileButton}>.pdf file</button>
         <button className={styles.fileButton}>.txt file</button>
         <button className={styles.fileButton}>.xlsx file</button>
       </div>
-
-      {/* Nút mở menu */}
-      <div className={styles.hiddenBar}>
-        <button className={styles.toggleButton} onClick={handleClick}>
-          {isVisible ? "<" : ">"}
-        </button>
-      </div>
-    </>
   );
 };
 
 export default HiddenBar;
 
 
+{/* <div className={styles.hiddenBar}>
+        <button className={styles.toggleButton} onClick={handleClick}>
+          {isVisible ? "<" : ">"}
+        </button>
+      </div> */}

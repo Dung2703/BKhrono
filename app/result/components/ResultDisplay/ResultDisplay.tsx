@@ -9,7 +9,7 @@ interface ScheduleCell {
   rowSpan: number; // Number of rows the cell spans (time slots)
 }
 
-const ResultDisplay: React.FC = () => {
+const ResultDisplay = () => {
   const scheduleData: ScheduleCell[] = [
     { subject: "HDH", classID:"CC02_CC03", rowIndex: 0, colIndex: 3, rowSpan: 5 },
     { subject: "HDH", classID:"CC02_CC03", rowIndex: 3, colIndex: 4, rowSpan: 2 },
