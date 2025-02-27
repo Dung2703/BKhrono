@@ -3,8 +3,8 @@ import React, { useState } from 'react'
 import styles from './PriorityBar.module.css'
 
 const PriorityBar = () => {
-  const dates = ['T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'CN',]
-  const times = ['2-3', '3-4', '4-5', '5-6', '6-7', '7-8', '8-9', '9-10', '10-11', '11-12', '12-13', '13-14', '14-15', '15-16',]
+  const dates = ['T2', 'T3', 'T4', 'T5', 'T6', 'T7',]
+  const times = ['2-3', '3-4', '4-5', '5-6', '6-7', '7-8', '8-9', '9-10', '10-11', '11-12', '12-13', '13-14',]
   const [currentDate, setCurrentDate] = useState<string>('')
   const [monday, setMonday] = useState<string[]>([])
   const [tuesday, setTuesday] = useState<string[]>([])
@@ -12,7 +12,7 @@ const PriorityBar = () => {
   const [thursday, setThursday] = useState<string[]>([])
   const [friday, setFriday] = useState<string[]>([])
   const [saturday, setSaturday] = useState<string[]>([])
-  const [sunday, setSunday] = useState<string[]>([])
+  // const [sunday, setSunday] = useState<string[]>([])
 
   const addTime = (time: string) => {
     if (!currentDate) {
@@ -46,9 +46,9 @@ const PriorityBar = () => {
       case 'T7':
         updateArray(saturday, setSaturday)
         break
-      case 'CN':
-        updateArray(sunday, setSunday)
-        break
+      // case 'CN':
+      //   updateArray(sunday, setSunday)
+      //   break
     }
   }
 
@@ -71,8 +71,8 @@ const PriorityBar = () => {
         return friday.includes(time)
       case 'T7':
         return saturday.includes(time)
-      case 'CN':
-        return sunday.includes(time)
+      // case 'CN':
+      //   return sunday.includes(time)
       default:
         return false
     }
@@ -110,11 +110,11 @@ const PriorityBar = () => {
           return true
         }
         return false
-      case 'CN':
-        if (sunday.length > 0) {
-          return true
-        }
-        return false
+      // case 'CN':
+      //   if (sunday.length > 0) {
+      //     return true
+      //   }
+      //   return false
     }
   }
 

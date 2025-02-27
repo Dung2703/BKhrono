@@ -1,0 +1,131 @@
+﻿
+  ĐĂNG KÝ MÔN HỌC
+ Đăng xuất
+ Xem Lịch sử đăng ký/Kết quả hậu kiểm
+ĐĂNG KÝ/ HIỆU CHỈNH     (HK242_D2) Đăng ký môn học HK242 đợt 2 và Kết quả đợt 1
+Lịch đăng ký
+#	Từ ngày	Đến ngày
+11/12/2024 10:00	18/12/2024 07:00
+Chọn môn học đăng ký
+IM1021
+
+STT		Mã MH	Tên MH	Số tín chỉ	BB/TC	
+1		IM1021	Khởi nghiệp	3.0		
+IM1021 - Khởi nghiệp
+Nhóm lớp	DK/ Sĩ số	Ngôn ngữ	Nhóm LT	Giảng viên	Nhóm BT	Giảng viên BT/TN	Sĩ số LT	#
+CC01	79/80	TA	CC01				80	
+Thứ	Tiết	Phòng	CS	BT/TN	Tuần học
+Thứ 5	- 2 3 - - - - - - - - - - - - -	B1-213	1		12--56789-12345678------------
+CC02	79/80	TA	CC02				80	
+Thứ	Tiết	Phòng	CS	BT/TN	Tuần học
+Thứ 5	- - - 4 5 - - - - - - - - - - -	B4-305	1		12--56789-12345678------------
+CC03	80/80	TA	CC03				80	
+Thứ	Tiết	Phòng	CS	BT/TN	Tuần học
+Thứ 2	- - - - - - 7 8 - - - - - - - -	B4-601	1		12--56789-12345678------------
+CC04	80/80	TA	CC04				80	
+Thứ	Tiết	Phòng	CS	BT/TN	Tuần học
+Thứ 2	- - - - - - - - 9 10 - - - - - -	C4-301	1		12--56789-12345678------------
+CN01	36/70	V	CN01				70	
+Thứ	Tiết	Phòng	CS	BT/TN	Tuần học
+Thứ 5	- - - - - - - - 9 10 - - - - - -	B10-203	1		12--56789-12345678------------
+DT01	34/70	V	DT01	"Chưa/Đang phân công"			70	
+Thứ	Tiết	Phòng	CS	BT/TN	Tuần học
+Thứ 5	- - - - - - - - - - - - 13 14 - -	B1-214	1		12--56789-12345678------------
+DTQ1	10/70	TA	DTQ1	"Chưa/Đang phân công"			70	
+Thứ	Tiết	Phòng	CS	BT/TN	Tuần học
+Thứ 6	- - - - - - - - - - - - 13 14 - -	B1-214	1		12--56789-12345678------------
+L01	80/80	V	L01				80	
+Thứ	Tiết	Phòng	CS	BT/TN	Tuần học
+Thứ 3	- - - - - - - - - 10 11 - - - - -	H6-213	2		12--56789-12345678------------
+L02	80/80	V	L02				80	
+Thứ	Tiết	Phòng	CS	BT/TN	Tuần học
+Thứ 3	- - - - 5 6 - - - - - - - - - -	H6-213	2		12--56789-12345678------------
+L03	78/80	V	L03				80	
+Thứ	Tiết	Phòng	CS	BT/TN	Tuần học
+Thứ 3	- - - - - - - 8 9 - - - - - - -	H6-213	2		12--56789-12345678------------
+L04	80/80	V	L04				80	
+Thứ	Tiết	Phòng	CS	BT/TN	Tuần học
+Thứ 3	- - 3 4 - - - - - - - - - - - -	H6-214	2		12--56789-12345678------------
+L05	80/80	V	L05				80	
+Thứ	Tiết	Phòng	CS	BT/TN	Tuần học
+Thứ 2	- 2 3 - - - - - - - - - - - - -	H6-414	2		12--56789-12345678------------
+L06	80/80	V	L06				80	
+Thứ	Tiết	Phòng	CS	BT/TN	Tuần học
+Thứ 5	- - - - - - - - - 10 11 - - - - -	H6-212	2		12--56789-12345678------------
+L07	80/80	V	L07				80	
+Thứ	Tiết	Phòng	CS	BT/TN	Tuần học
+Thứ 5	- - - - - - - 8 9 - - - - - - -	H6-310	2		12--56789-12345678------------
+L08	80/80	V	L08				80	
+Thứ	Tiết	Phòng	CS	BT/TN	Tuần học
+Thứ 6	- 2 3 - - - - - - - - - - - - -	H6-212	2		12--56789-12345678------------
+L09	79/80	V	L09				80	
+Thứ	Tiết	Phòng	CS	BT/TN	Tuần học
+Thứ 6	- - - 4 5 - - - - - - - - - - -	H6-210	2		12--56789-12345678------------
+L10	79/80	V	L10				80	
+Thứ	Tiết	Phòng	CS	BT/TN	Tuần học
+Thứ 2	- - - 4 5 - - - - - - - - - - -	H6-305	2		12--56789-12345678------------
+L11	80/80	V	L11	"Chưa/Đang phân công"			80	
+Thứ	Tiết	Phòng	CS	BT/TN	Tuần học
+Thứ 2	- - - - - - 7 8 - - - - - - - -	H1-405	2		12--56789-12345678------------
+L12	80/80	V	L12	"Chưa/Đang phân công"			80	
+Thứ	Tiết	Phòng	CS	BT/TN	Tuần học
+Thứ 3	- - - - 5 6 - - - - - - - - - -	H6-214	2		12--56789-12345678------------
+L13	2/80	V	L13	"Chưa/Đang phân công"			80	
+Thứ	Tiết	Phòng	CS	BT/TN	Tuần học
+Thứ 6	- - - - - - - - 9 10 - - - - - -	H1-401	2		12--56789-12345678------------
+L14	37/80	V	L14	"Chưa/Đang phân công"			80	
+Thứ	Tiết	Phòng	CS	BT/TN	Tuần học
+Thứ 6	- - - - - - 7 8 - - - - - - - -	H1-401	2		12--56789-12345678------------
+P01	55/70	V	P01				70	
+Thứ	Tiết	Phòng	CS	BT/TN	Tuần học
+Thứ 6	- - - - - - - - 9 10 - - - - - -	B10-202	1		12--56789-12345678------------
+P02	21/70	V	P02				70	
+Thứ	Tiết	Phòng	CS	BT/TN	Tuần học
+Thứ 6	- - - - - - - - - - 11 12 - - - -	C6-603	1		12--56789-12345678------------
+TT01	68/70	TA	TT01				70	
+Thứ	Tiết	Phòng	CS	BT/TN	Tuần học
+Thứ 5	- - - - - - 7 8 - - - - - - - -	B4-601	1		12--56789-12345678------------
+Phiếu đăng ký
+ (HK242_D2) Đăng ký môn học HK242 đợt 2 và Kết quả đợt 1
+ Danh sách đã đăng ký
+1SP1033 - K/tế chính trị Mác-Lênin2.0
+Nhóm lớp	DK/ Sĩ số	Ngôn ngữ	Nhóm LT	Giảng viên	Nhóm BT	Giảng viên BT/TN	Sĩ số LT	#
+CC05	63/80	V	CC05				80	
+Thứ	Tiết	Phòng	CS	BT/TN	Tuần học
+Thứ 2	- - - - - - - - - - 11 12 - - - -	B1-208	1		12--56789-12345---------------
+2IM1021 - Khởi nghiệp3.0
+Nhóm lớp	DK/ Sĩ số	Ngôn ngữ	Nhóm LT	Giảng viên	Nhóm BT	Giảng viên BT/TN	Sĩ số LT	#
+CC04	80/80	TA	CC04				80	
+Thứ	Tiết	Phòng	CS	BT/TN	Tuần học
+Thứ 2	- - - - - - - - 9 10 - - - - - -	C4-301	1		12--56789-12345678------------
+3CO2001 - Kỹnăng chnghiệp cho kỹsư3.0
+Nhóm lớp	DK/ Sĩ số	Ngôn ngữ	Nhóm LT	Giảng viên	Nhóm BT	Giảng viên BT/TN	Sĩ số LT	#
+CC04	56/80	TA	CC04				80	
+Thứ	Tiết	Phòng	CS	BT/TN	Tuần học
+Thứ 3	- - - - - - - - - - 11 12 - - - -	C5-403	1		12--56789-12345678------------
+4CO2039 - Lập trình nâng cao3.0
+Nhóm lớp	DK/ Sĩ số	Ngôn ngữ	Nhóm LT	Giảng viên	Nhóm BT	Giảng viên BT/TN	Sĩ số LT	#
+CC02	79/80	TA	CC02				80	
+Thứ	Tiết	Phòng	CS	BT/TN	Tuần học
+Thứ 6	- - - - - - - 8 9 - - - - - - -	B4-601	1		12--56789-12345678------------
+5CO2017 - Hệ điều hành3.0
+Nhóm lớp	DK/ Sĩ số	Ngôn ngữ	Nhóm LT	Giảng viên	Nhóm BT	Giảng viên BT/TN	Sĩ số LT	#
+CC02_CC03	40/40	TA	CC02		CC03		80	
+Thứ	Tiết	Phòng	CS	BT/TN	Tuần học
+Thứ 5	- 2 3 4 5 6 - - - - - - - - - -	C6-102	1		-------8---2-4-6--------------
+Thứ 6	- - - - 5 6 - - - - - - - - - -	B4-502	1		12--56789-12345678------------
+6MT2013 - Xác suất và thống kê4.0
+Nhóm lớp	DK/ Sĩ số	Ngôn ngữ	Nhóm LT	Giảng viên	Nhóm BT	Giảng viên BT/TN	Sĩ số LT	#
+CC01	80/80	TA	CC01				80	
+Thứ	Tiết	Phòng	CS	BT/TN	Tuần học
+Thứ 3	- - - - - - - 8 9 10 - - - - - -	B4-306	1		12--56789-12345678------------
+7SA0004 - Sinh hoạt sinh viên định kỳ0.0
+Nhóm lớp	DK/ Sĩ số	Ngôn ngữ	Nhóm LT	Giảng viên	Nhóm BT	Giảng viên BT/TN	Sĩ số LT	#
+A02	799/800	V	A02					
+Thứ	Tiết	Phòng	CS	BT/TN	Tuần học
+Thứ 3	- - - - 5 6 - - - - - - - - - -	A5-HTA5	1		-------8----------------------
+
+Tổng số tín chỉ đăng ký: 18.0 (Dự thính: 0)
+Tổng số môn đăng ký: 7
+Version 2.0.2Copyright © 2014-2016 Phòng đào tạo, Đại học Bách Khoa TP.HCM
+﻿

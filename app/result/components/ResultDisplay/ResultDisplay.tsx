@@ -24,7 +24,7 @@ const ResultDisplay = () => {
 
   const rows: React.JSX.Element[] = [];
 
-  for (let rowIndex = 0; rowIndex < 11; rowIndex++) {
+  for (let rowIndex = 0; rowIndex < 13; rowIndex++) {
     const cells: React.JSX.Element[] = [];
     let currentColumn = 0;
 
@@ -44,7 +44,7 @@ const ResultDisplay = () => {
           } else {
             cells.push(
               <td
-                style={{ backgroundColor: "white" }}
+                style={{ backgroundColor: "var(--bgSoft)" }}
                 key={`empty-${rowIndex}-${currentColumn}`}
               />
             );
@@ -80,7 +80,7 @@ const ResultDisplay = () => {
       }
       cells.push(
         <td
-          style={{ backgroundColor: "white" }}
+          style={{ backgroundColor: "var(--bgSoft)" }}
           key={`empty-${rowIndex}-${currentColumn}`}
         />
       );
@@ -89,7 +89,7 @@ const ResultDisplay = () => {
 
     rows.push(
       <tr key={rowIndex}>
-        <th className={styles.time}>{rowIndex + 2}</th>
+        <th className={styles.time}>{rowIndex + 7}-{rowIndex + 8}</th>
         {cells}
       </tr>
     );
@@ -100,13 +100,13 @@ const ResultDisplay = () => {
       <table className={styles.table}>
         <thead>
           <tr>
-            <th className={`${styles.day} ${styles.corner}`}>Tiết</th>
-            <th className={styles.day}>T2</th>
-            <th className={styles.day}>T3</th>
-            <th className={styles.day}>T4</th>
-            <th className={styles.day}>T5</th>
-            <th className={styles.day}>T6</th>
-            <th className={styles.day}>T7</th>
+            <th className={`${styles.day} ${styles.corner}`}>Time</th>
+            <th className={styles.day}>Mo</th>
+            <th className={styles.day}>Tu</th>
+            <th className={styles.day}>We</th>
+            <th className={styles.day}>Th</th>
+            <th className={styles.day}>Fr</th>
+            <th className={styles.day}>Sa</th>
           </tr>
         </thead>
         <tbody>

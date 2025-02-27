@@ -4,6 +4,7 @@ import styles from './page.module.css';
 import SideBar from './components/SideBar/SideBar';
 import TextInputBox from './components/TextInputBox/TextInputBox';
 import FileInputBox from './components/FileInputBox/FileInputBox';
+import LogoSwitch from '../components/LogoSwitch/LogoSwitch';
 
 const HomePage = () => {
   const [courses, setCourses] = useState<string[]>([]);
@@ -29,6 +30,9 @@ const HomePage = () => {
       </div>
       <div className={styles.buttonContainer}>
         <button className={styles.button}>Continue</button>
+        <div className={styles.logo_switch}>
+          <LogoSwitch />
+        </div>
       </div>
     </div>
   );

@@ -9,7 +9,6 @@ interface GenerateProps {
 const Generate: React.FC<GenerateProps> = ({ isVisible }) => {
   return (
     <div className={`${styles.container} ${isVisible ? styles.hide : styles.show}`}>
-      <button className={styles.toggleButton}>{"<"}</button>
       <button className={styles.generateButton}>Generate</button>
     </div>
   );

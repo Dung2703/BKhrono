@@ -12,11 +12,6 @@ const TopBar = () => {
             <div className={styles.hiddenBar}>
                 <HiddenBar isVisible={isVisible} setIsVisible={setIsVisible} />
             </div>
-            <div className={styles.generateBar}>
-                <Generate isVisible={isVisible} />
-                {/* <button className={styles.toggleButton} onClick={() => setIsVisible(!isVisible)}>
-                </button> */}
-            </div>
         </div>
     );
 };

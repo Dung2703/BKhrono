@@ -5,6 +5,13 @@
     --text: white;
     --textSoft: #b7bac1;
 }
+:root[data-theme='light'] {
+    --bg: white;
+    --bgSoft: #f0f0f0;
+    --bgButton: #e0e0e0;
+    --text: black;
+    --textSoft: #5a5a5a;
+}
 
 * {
     margin: 0;
