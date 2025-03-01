@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { saveAs } from 'file-saver'
 import styles from './TextInputBox.module.css'
+import { getClassesList } from '@/app/utils/formatInputData'
 
 interface InputProps {
   addCourse: (course: string) => void
@@ -19,6 +20,7 @@ const Input: React.FC<InputProps> = ({ addCourse }) => {
   }
 
   const handleInputChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const data: string[] = getClassesList(event.target.value)
     setNewCourse(event.target.value)
   }
 
