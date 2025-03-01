@@ -133,7 +133,8 @@ const PriorityBar = () => {
               ${currentDate === date ? styles.activeDate : ''}
               ${updateLayoutDay(date) ? styles.chosenDate : ''}`}
               onClick={() => {
-                  setCurrentDate(date)
+                  if (currentDate === date) setCurrentDate('')
+                  else setCurrentDate(date)
                 }
               }
               >{date}
