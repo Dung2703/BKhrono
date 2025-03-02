@@ -69,15 +69,9 @@ const getClassNonLab = (subclass: RegExpMatchArray, index: number, classes: RegE
     }
     const groupClass = subclass[0]
     temp = temp.slice(5)
-    let numberStudent
-    if (temp.slice(0, 5).includes(' ')) {
-        numberStudent = temp.slice(0, 4)
-        temp = temp.slice(58)
-    }
-    else {
-        numberStudent = temp.slice(0, 5)
-        temp = temp.slice(59)
-    }
+    const indexOfTab = temp.indexOf('\t')
+    const numberStudent = temp.slice(0, indexOfTab)
+    temp = temp.slice(indexOfTab + 54)
     const day = temp.slice(0, 1)
     temp = temp.slice(2)
     let time = '['
