@@ -1,75 +1,40 @@
-.container {
-    display: flex;
-    background-color: var(--bgSoft);
-    color: var(--textSoft);
-    border-radius: 15px;
-    border: 3px solid black;
-    transition: transform 0.5s ease-out, opacity 0.5s ease-out, visibility 0.5s ease-out;
-  }
-  
 .homeButton {
-  padding: 0.25em 0.5em;
+  padding: 0.75em 1.5em;
   border: 3px solid black;
   background-color: var(--bgSoft);
   cursor: pointer;
-  border-radius: 20px;
+  border-radius: 15px;
   font-size: 1.25rem;
   color: var(--textSoft);
-  height: 60px;
   font-weight: 700;
-  width: 150px;
-  margin-top: 20px;
-  position: relative; 
-  left: 175px; 
 }
   
 /* Red */
 @media screen and (max-width: 1400px) {
-  .toggleButton {
-    padding: 0.75em;
-  }
   .homeButton {
-    padding: 0.75em 2em 0.75em 0.5em;
+    padding: 0.75em 0.5em;
   }
 }
 
 /* Green */
 @media screen and (max-width: 1024px) {
-  .toggleButton {
-    padding: 0.75em;
-  }
   .homeButton {
-    padding: 0.75em 2em 0.75em 0.5em;
+    padding: 0.75em 0.5em;
   }
 }
 
 /* Yellow */
 @media screen and (max-width: 768px) {
-  .toggleButton, .generateButton {
-    font-size: 0.8rem;
-  }
-  .toggleButton {
-    padding: 0.5em;
-  }
   .homeButton {
-    padding: 0.5em 1.5em 0.5em 0.25em;
+    font-size: 0.8rem;
+    padding: 0.5em 0.25em;
   }
 }
 
 /* Brown */
 @media screen and (max-width: 480px) {
-  .container {
-    border-width: 1px;
-  }
-  .toggleButton, .generateButton {
-    font-size: 0.5rem;
-  }
-  .toggleButton {
-    padding: 0.5em;
-    border-right: 1px solid rgba(0, 0, 0, 0.1);
-  }
   .homeButton {
-    padding: 0.5em 1.5em 0.5em 0.25em;
+    font-size: 0.5rem;
   }
 }
   

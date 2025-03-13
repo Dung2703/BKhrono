@@ -12,8 +12,12 @@ const ResultPage = () => {
   return (
     <div className={styles.container}>
       <div className={styles.leftSide}>
-      <HomeButton />
-        <PriorityBar />
+        <div className={styles.homeButton}>
+          <HomeButton />
+        </div>
+        <div className={styles.priorityBar}>
+          <PriorityBar />
+        </div>
       </div>
       <div className={styles.resultSection}>
         <div className={styles.topBar}>
