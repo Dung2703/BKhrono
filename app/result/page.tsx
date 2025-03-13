@@ -4,13 +4,15 @@ import PriorityBar from './components/PriorityBar/PriorityBar'
 import TopBar from './components/TopBar/TopBar'
 import ResultDisplay from './components/ResultDisplay/ResultDisplay'
 import Generate from './components/GenerateBar/Generate';
+import HomeButton from './components/HomeButton/HomeButton';
 import LogoSwitch from '../components/LogoSwitch/LogoSwitch';
+
 
 const ResultPage = () => {
   return (
     <div className={styles.container}>
       <div className={styles.leftSide}>
-        {/* Add Home Button Here */}
+      <HomeButton />
         <PriorityBar />
       </div>
       <div className={styles.resultSection}>
