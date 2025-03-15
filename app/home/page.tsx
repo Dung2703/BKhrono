@@ -29,7 +29,7 @@ const HomePage = () => {
         </div>
       </div>
       <div className={styles.buttonContainer}>
-        <button className={styles.button}>Continue</button>
+        <button className={styles.button}   onClick={() => (window.location.href = '/result')}>Continue</button>
         <div className={styles.logo_switch}>
           <LogoSwitch />
         </div>
