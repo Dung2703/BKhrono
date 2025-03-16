@@ -4,7 +4,7 @@ import styles from './PriorityBar.module.css'
 
 const PriorityBar = () => {
   const dates = ['T2', 'T3', 'T4', 'T5', 'T6', 'T7',]
-  const times = ['2-3', '3-4', '4-5', '5-6', '6-7', '7-8', '8-9', '9-10', '10-11', '11-12', '12-13', '13-14',]
+  const times = ['7-8', '8-9', '9-10', '10-11', '11-12', '12-13', '13-14', '14-15', '15-16', '16-17', '17-18', '18-19',]
   const [currentDate, setCurrentDate] = useState<string>('')
   const [monday, setMonday] = useState<string[]>([])
   const [tuesday, setTuesday] = useState<string[]>([])
