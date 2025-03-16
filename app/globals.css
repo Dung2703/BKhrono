@@ -4,19 +4,32 @@
     --bgButton: #1f2a47;
     --text: white;
     --textSoft: #b7bac1;
+
 }
+
+:root [data-theme='dark'] {
+    --bg: #151c2c;
+    --bgSoft: #182237;
+    --bgButton: #1f2a47;
+    --text: white;
+    --textSoft: #b7bac1;
+
+}
+
 :root[data-theme='light'] {
     --bg: white;
     --bgSoft: #f0f0f0;
     --bgButton: #e0e0e0;
     --text: black;
     --textSoft: #5a5a5a;
+
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out; 
 }
 
 body {

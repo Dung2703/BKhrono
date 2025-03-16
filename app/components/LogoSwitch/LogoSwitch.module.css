@@ -1,3 +1,63 @@
 .container {
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5em;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 40px;
+    background-color: var(--toggle-bg-color, #ffffff);
+    border-radius: 20px;
+    border: 2px solid;
+    cursor: pointer;
+    background-size: 35px 25px; /* Adjust icon size */
+    background-position: center; /* Center the icon */
+    background-repeat: no-repeat; /* Ensure the icon doesn’t repeat */
+    transition: background-color 0.5s ease-in-out, background-image 0.5s ease-in-out; /* Smooth transition */
+}
+
+.switch input {
+    display: none;
+}
+
+.switch.light {
+    background-position:  80% center;
+    background-color: #fffb00; /* Light mode background color */
+    border-color: black; /* Light mode border color */
+    background-image: url('https://freepngimg.com/thumb/emoji/81205-white-computing-cloud-emoji-free-download-image.png'); /* Path to cloud icon */
+}
+
+.switch.dark {
+    background-position: 25% center;
+    background-color: #000000; /* Dark mode background color */
+    border-color: white; /* Dark mode border color */
+    background-image: url(' https://static.vecteezy.com/system/resources/previews/037/748/027/large_2x/cute-stars-at-night-free-png.png'); /* Path to star icon */
+}
+
+.slider {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translate(0, -50%);
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: var(--toggle-circle-color, #fff);
+    -webkit-transition: .4s;
+    transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out;
+}
+
+.switch.light .slider {
+    background-color: #ffd700; 
+    left: 5%; 
+}
+
+.switch.dark .slider {
+    background-color: #141f3a; 
+    left: 47px;
 }
