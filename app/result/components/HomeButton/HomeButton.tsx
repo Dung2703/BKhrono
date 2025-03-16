@@ -1,11 +1,12 @@
 import React from "react";
 import styles from "./HomeButton.module.css";
+import Link from "next/link";
 
 const HomeButton = () => {
   return (
-    <button className={styles.homeButton} onClick={() => window.location.href = '/'}>
-      Home
-    </button>
+    <Link href="/">
+      <button className={styles.homeButton}>Home</button>
+    </Link>
   );
 }
 

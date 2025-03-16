@@ -4,7 +4,7 @@ import ThemeToggle from './Theme_Toggle';
 const LogoSwitch = () => {
   return (
     <div className={styles.container}>
-      <img src="https://hcmut.edu.vn/img/nhanDienThuongHieu/01_logobachkhoasang.png" height="220hv" width="160%"/>
+      <img src="https://hcmut.edu.vn/img/nhanDienThuongHieu/01_logobachkhoasang.png" height="auto" width="150px"/>
       <ThemeToggle/>
     </div>
   );

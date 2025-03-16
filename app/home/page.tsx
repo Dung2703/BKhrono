@@ -5,6 +5,7 @@ import SideBar from './components/SideBar/SideBar';
 import TextInputBox from './components/TextInputBox/TextInputBox';
 import FileInputBox from './components/FileInputBox/FileInputBox';
 import LogoSwitch from '../components/LogoSwitch/LogoSwitch';
+import Link from 'next/link';
 
 const HomePage = () => {
   const [courses, setCourses] = useState<string[]>([]);
@@ -29,10 +30,10 @@ const HomePage = () => {
         </div>
       </div>
       <div className={styles.buttonContainer}>
-        <button className={styles.button}   onClick={() => (window.location.href = '/result')}>Continue</button>
-        <div className={styles.logo_switch}>
-          <LogoSwitch />
-        </div>
+        <Link href="/result">
+          <button className={styles.button}>Continue</button>
+        </Link>
+        <LogoSwitch />
       </div>
     </div>
   );

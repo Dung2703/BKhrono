@@ -31,9 +31,7 @@ const ResultPage = () => {
         <div className={styles.generateButton}>
           <Generate isVisible={false}/> 
         </div>
-        <div className={styles.logo_switch}>
-          <LogoSwitch />
-        </div>
+        <LogoSwitch />
       </div>
     </div>
   )
