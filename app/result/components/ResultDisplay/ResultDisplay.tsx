@@ -24,7 +24,7 @@ const ResultDisplay = () => {
 
   const rows: React.JSX.Element[] = [];
 
-  for (let rowIndex = 0; rowIndex < 13; rowIndex++) {
+  for (let rowIndex = 0; rowIndex < 12; rowIndex++) {
     const cells: React.JSX.Element[] = [];
     let currentColumn = 0;
 

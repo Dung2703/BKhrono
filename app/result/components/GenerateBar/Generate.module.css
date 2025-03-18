@@ -4,7 +4,6 @@
   color: var(--textSoft);
   border-radius: 15px;
   border: 3px solid black;
-  transition: transform .5s ease-out, opacity .5s ease-out, visibility .5s ease-out;
 }
 
 .generateButton {

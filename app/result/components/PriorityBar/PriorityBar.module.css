@@ -51,7 +51,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: background-color 0.3s, transform 0.2s;
 }
 
 .date button {

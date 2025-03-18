@@ -18,8 +18,9 @@ const HiddenBar: React.FC<HiddenBarProps> = ({ isVisible, setIsVisible }) => {
       <div ref={parent} 
            className={`${styles.container} ${isVisible ? styles.show : styles.show}`}
       >
-        <button className={styles.fileButton}>.pdf file</button>
         <button className={styles.fileButton}>.txt file</button>
+        <div className={styles.divider}></div>
+        <button className={styles.fileButton}>.pdf file</button>
         <button className={styles.fileButton}>.xlsx file</button>
       </div>
   );
