@@ -25,8 +25,20 @@ export const getClassesList = (data: string) => {
         const data: string = splitData[1] || ''
         const str: string = data
         if (course.includes('_')) {
-            
+            // Extract all subclasses from str (e.g., CC01_CC02, CC02_CC03)
+            const subclassMatches = str.match(/CC\d{2}_CC\d{2}/g) || [];
+        
+            subclassMatches.forEach((subclass) => {
+                // Isolate the part of str specific to this subclass
+                const subclassStartIndex = str.indexOf(subclass);
+                const subclassEndIndex = str.indexOf("CC", subclassStartIndex + 1) || str.length;
+                const subclassStr = str.slice(subclassStartIndex, subclassEndIndex);
+        
+                // Process this subclass with getClassLab
+                finalClasses.push(getClassLab(subclassStr, subject));
+            });
         }
+        
         else {
             const regex = /CC\d{2}/g
             const matches = [...str.matchAll(regex)]
@@ -102,3 +114,44 @@ const getClassNonLab = (subclass: RegExpMatchArray, index: number, classes: RegE
 // const getClassLab = (course: string) => {
 
 // }
+
+const getClassLab = (subclassStr: string, subject: string): string => {
+    // Extract the main and lab class codes
+    const matchResult = subclassStr.match(/CC\d{2}_CC\d{2}/);
+    const [mainClass, labClass] = matchResult?.[0].split("_") ?? ["Unknown", "Unknown"];
+  
+    // Extract the entire "40/40" string for student count
+    const studentsMatch = subclassStr.match(/\d{1,3}\/\d{1,3}/);
+    const studentsString = studentsMatch ? studentsMatch[0] : "Unknown";
+  
+    // Match time blocks, days, and rooms
+    const timeBlocks = subclassStr.match(/Thứ.*?(\d{1,2}.*?)/g) || [];
+    const days = subclassStr.match(/Thứ (\d+)/g) || [];
+    const rooms = subclassStr.match(/[A-Z]\d-\d+/g) || [];
+  
+    let mainIndex = 0;
+    let labIndex = 1;
+  
+    // Determine the main and lab classes based on time durations
+    if (timeBlocks.length === 2 && timeBlocks[0].split(" ").filter((x) => x !== "-").length < timeBlocks[1].split(" ").filter((x) => x !== "-").length) 
+    {
+      mainIndex = 1;
+      labIndex = 0;
+    }
+  
+    // Parse main class details
+    const mainDay = days[mainIndex]?.split(" ")[1] || "Unknown";
+    const mainTimes = timeBlocks[mainIndex]?.split(" ").filter((x) => x !== "-").map(Number) || [];
+    const mainTimeRange = mainTimes.length? `[${mainTimes[2]},${mainTimes[mainTimes.length - 1]}]`: "Unknown";
+    const mainRoom = rooms[mainIndex] || "Unknown";
+  
+    // Parse lab class details
+    const labDay = days[labIndex]?.split(" ")[1] || "Unknown";
+    const labTimes = timeBlocks[labIndex]?.split(" ").filter((x) => x !== "-").map(Number) || [];
+    const labTimeRange = labTimes.length? `[${labTimes[2]},${labTimes[labTimes.length - 1]}]`: "Unknown";
+    const labRoom = rooms[labIndex] || "Unknown";
+  
+    // Return formatted string
+    return `${subject} ${mainClass} ${studentsString} ${mainDay} ${mainTimeRange} ${mainRoom} ${labClass} ${labDay} ${labTimeRange} ${labRoom}`;
+  };
+  
