@@ -185,11 +185,11 @@ const getClassLab = (subclassStr: string, subject: string): string => {
         students,
         mainDay,
         mainTime,
-        mainRoom,
-        labClass,
+        room,
+        class_lab,
         labDay,
         labTime,
-        labRoom,
+        room_lab,
       ] = parts;
       const [currentStudents, maxStudents] = students.split("/").map(Number);
       const mainDayNumber = parseInt(mainDay.replace("Thứ", ""), 10);
@@ -204,13 +204,13 @@ const getClassLab = (subclassStr: string, subject: string): string => {
           classCode,
           currentStudents,
           maxStudents,
-          mainDay: mainDayNumber,
-          mainTime: mainTimeRange,
-          mainRoom,
-          labClass,
-          labDay: labDayNumber,
-          labTime: labTimeRange,
-          labRoom,
+          date: mainDayNumber,
+          time: mainTimeRange,
+          room,
+          class_lab,
+          date_lab: labDayNumber,
+          time_lab: labTimeRange,
+          room_lab,
         },
       ];
     }
