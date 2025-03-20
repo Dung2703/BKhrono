@@ -154,4 +154,65 @@ const getClassLab = (subclassStr: string, subject: string): string => {
     // Return formatted string
     return `${subject} ${mainClass} ${studentsString} ${mainDay} ${mainTimeRange} ${mainRoom} ${labClass} ${labDay} ${labTimeRange} ${labRoom}`;
   };
+
+
+  export const parseClassString = (classStr: string): any[] => {
+    const parts = classStr.split(" ");
+    if (parts.length === 6) {
+      // Non-lab class format
+      const [course_id, classCode, students, day, time, room] = parts;
+      const [current_quantity, max_quantity] = students.split("/").map(Number);
+      const date = parseInt(day.replace("Thứ", ""), 10);
+      const timeRange = time.slice(1, -1).split(",").map(Number);
   
+      return [
+        {
+            type: "non-lab",
+            course_id,
+            class: classCode,
+            current_quantity,
+            max_quantity,
+            date,
+            time: timeRange,
+            room,
+        },
+      ];
+    } else if (parts.length === 10) {
+      // Lab class format
+      const [
+        course_id,
+        classCode,
+        students,
+        mainDay,
+        mainTime,
+        room,
+        class_lab,
+        labDay,
+        labTime,
+        room_lab,
+      ] = parts;
+      const [currentStudents, maxStudents] = students.split("/").map(Number);
+      const mainDayNumber = parseInt(mainDay.replace("Thứ", ""), 10);
+      const mainTimeRange = mainTime.slice(1, -1).split(",").map(Number);
+      const labDayNumber = parseInt(labDay.replace("Thứ", ""), 10);
+      const labTimeRange = labTime.slice(1, -1).split(",").map(Number);
+  
+      return [
+        {
+          type: "lab",
+          course_id,
+          classCode,
+          currentStudents,
+          maxStudents,
+          date: mainDayNumber,
+          time: mainTimeRange,
+          room,
+          class_lab,
+          date_lab: labDayNumber,
+          time_lab: labTimeRange,
+          room_lab,
+        },
+      ];
+    }
+    return []; // Return an empty array for unexpected formats
+  };

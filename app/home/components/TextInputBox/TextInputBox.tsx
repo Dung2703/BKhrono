@@ -1,7 +1,11 @@
 import React, { useState } from 'react'
 import { saveAs } from 'file-saver'
 import styles from './TextInputBox.module.css'
-import { getClassesList } from '@/app/utils/formatInputData'
+import { getClassesList, parseClassString } from '@/app/utils/formatInputData'
+
+//Arrays to be processed further
+const nonLabArray: any[] = []
+const LabArray: any[] = []
 
 interface InputProps {
   addCourse: (course: string) => void
@@ -21,6 +25,22 @@ const Input: React.FC<InputProps> = ({ addCourse }) => {
 
   const handleInputChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     const data: string[] = getClassesList(event.target.value)
+    console.log("String", data);
+    // Parse each class string and separate into non-lab and lab arrays
+    data.forEach((classStr: string) => {
+      const parsedClasses = parseClassString(classStr); // Parse the class string into objects
+      parsedClasses.forEach((classObj: any) => {
+        if (classObj.type === "non-lab") {
+          nonLabArray.push(classObj); // Add to non-lab array
+        } else if (classObj.type === "lab") {
+          LabArray.push(classObj); // Add to lab array
+        }
+      });
+    });
+
+    console.log("Non-Lab Array:", nonLabArray);
+    console.log("Lab Array:", LabArray);
+
     setNewCourse(event.target.value)
   }
 
