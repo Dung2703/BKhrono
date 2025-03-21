@@ -27,13 +27,20 @@ export const getClassesList = (data: string) => {
         if (course.includes('_')) {
             // Extract all subclasses from str (e.g., CC01_CC02, CC02_CC03)
             const subclassMatches = str.match(/CC\d{2}_CC\d{2}/g) || [];
-        
+
             subclassMatches.forEach((subclass) => {
+
                 // Isolate the part of str specific to this subclass
                 const subclassStartIndex = str.indexOf(subclass);
-                const subclassEndIndex = str.indexOf("CC", subclassStartIndex + 1) || str.length;
+                const regex = /CC|DT|DTQ|L|CN|TN/g; // Match any of the keywords
+                const searchArea = str.slice(subclassStartIndex + 59, subclassStartIndex + 59+ 235); // Narrow the search area
+
+                const match = searchArea.match(regex);
+
+                let subclassEndIndex = match ? str.indexOf(match[0], subclassStartIndex + 59) : str.length;
+
+
                 const subclassStr = str.slice(subclassStartIndex, subclassEndIndex);
-        
                 // Process this subclass with getClassLab
                 finalClasses.push(getClassLab(subclassStr, subject));
             });
@@ -48,8 +55,7 @@ export const getClassesList = (data: string) => {
             })
         }
     })
-    
-    return finalClasses
+    return finalClasses;
 }
 
 const getClassNonLab = (subclass: RegExpMatchArray, index: number, classes: RegExpMatchArray[], subject: string) => {
@@ -125,31 +131,32 @@ const getClassLab = (subclassStr: string, subject: string): string => {
     const studentsString = studentsMatch ? studentsMatch[0] : "Unknown";
   
     // Match time blocks, days, and rooms
-    const timeBlocks = subclassStr.match(/Thứ.*?(\d{1,2}.*?)/g) || [];
+    const timeBlocks = subclassStr.match(/Thứ \d+\s+[-\d\s]+/g) || ["nah"];
+
     const days = subclassStr.match(/Thứ (\d+)/g) || [];
     const rooms = subclassStr.match(/[A-Z]\d-\d+/g) || [];
   
-    let mainIndex = 0;
-    let labIndex = 1;
-  
+    // default set up: main is above and lab is below => [0: 'main', 1:'lab']
+    let swap = 1;
+
     // Determine the main and lab classes based on time durations
-    if (timeBlocks.length === 2 && timeBlocks[0].split(" ").filter((x) => x !== "-").length < timeBlocks[1].split(" ").filter((x) => x !== "-").length) 
+    if (timeBlocks[0].split(" ").filter((x) => x !== "-").length < timeBlocks[1].split(" ").filter((x) => x !== "-").length) 
     {
-      mainIndex = 1;
-      labIndex = 0;
+ 
+      swap = 0;
     }
   
     // Parse main class details
-    const mainDay = days[mainIndex]?.split(" ")[1] || "Unknown";
-    const mainTimes = timeBlocks[mainIndex]?.split(" ").filter((x) => x !== "-").map(Number) || [];
-    const mainTimeRange = mainTimes.length? `[${mainTimes[2]},${mainTimes[mainTimes.length - 1]}]`: "Unknown";
-    const mainRoom = rooms[mainIndex] || "Unknown";
+    const mainDay = days[swap? 1:0]?.split(" ")[1] || "Unknown";
+    const mainTimes = timeBlocks[swap? 1:0]?.split(" ").filter((x) => x !== "-").map(Number) || [];
+    const mainTimeRange = mainTimes.length? `[${mainTimes[2]},${mainTimes[mainTimes.length - 2]}]`: "Unknown";
+    const mainRoom = rooms[swap? 1:0] || "Unknown";
   
     // Parse lab class details
-    const labDay = days[labIndex]?.split(" ")[1] || "Unknown";
-    const labTimes = timeBlocks[labIndex]?.split(" ").filter((x) => x !== "-").map(Number) || [];
-    const labTimeRange = labTimes.length? `[${labTimes[2]},${labTimes[labTimes.length - 1]}]`: "Unknown";
-    const labRoom = rooms[labIndex] || "Unknown";
+    const labDay = days[swap? 0:1]?.split(" ")[1] || "Unknown";
+    const labTimes = timeBlocks[swap? 0:1]?.split(" ").filter((x) => x !== "-").map(Number) || [];
+    const labTimeRange = labTimes.length? `[${labTimes[2]},${labTimes[labTimes.length - 2]}]`: "Unknown";
+    const labRoom = rooms[swap? 0:1] || "Unknown";
   
     // Return formatted string
     return `${subject} ${mainClass} ${studentsString} ${mainDay} ${mainTimeRange} ${mainRoom} ${labClass} ${labDay} ${labTimeRange} ${labRoom}`;
