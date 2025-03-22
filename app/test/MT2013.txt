@@ -13,7 +13,7 @@ STT		Mã MH	Tên MH	Số tín chỉ	BB/TC
 1		MT2013	Xác suất và thống kê	4.0		
 MT2013 - Xác suất và thống kê
 Nhóm lớp	DK/ Sĩ số	Ngôn ngữ	Nhóm LT	Giảng viên	Nhóm BT	Giảng viên BT/TN	Sĩ số LT	#
-CC01	80/80	TA	CC01				80	
+CC01	79/80	TA	CC01				80	
 Thứ	Tiết	Phòng	CS	BT/TN	Tuần học
 Thứ 3	- - - - - - - 8 9 10 - - - - - -	B4-306	1		12--56789-12345678------------
 CC02	68/80	TA	CC02				80	

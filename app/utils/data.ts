@@ -1,4 +1,4 @@
-import { Class } from "./types";
+import { Class, SchedulePriority } from "./types";
 
 const formattingInput = (data: string) => {
 	const courses: string[] = data.split('Lịch đăng ký')
@@ -226,9 +226,7 @@ export const parseClassString = (classStr: string): Class[] => {
 	return []; // Return an empty array for unexpected formats
 };
 
-export const getClassesFromCourse = (course_id: string, classes: Class[]): Class[] => {
-	return classes.filter((cls) => cls.course_id === course_id);
-}
+
 
 function shuffleArray<T>(array: T[]): T[] {
 	return array
@@ -237,10 +235,58 @@ function shuffleArray<T>(array: T[]): T[] {
 		.map(({ value }) => value);
 }
 
-export const fillClasses = (schedule: string[][], classes: Class[]): void => {
-	const shuffledClasses = shuffleArray(classes);
+// Example: schedulePriority = {
+//   monday: [2, 3, 4, 5], // times from 7-8h => 2, 8-9h => 3, etc.
+//   tuesday: [7, 6, 5, 4, 3, 2],
+//   wednesday: [],
+//   thursday: [],
+//   friday: [],
+//   saturday: []
+// };
+export function prioritizeClasses(classes: Class[], schedulePriority: SchedulePriority): Class[] {
+  // Map numeric day values to schedulePriority keys.
+  const dayKeys: { [key: number]: keyof SchedulePriority } = {
+    2: "monday",
+    3: "tuesday",
+    4: "wednesday",
+    5: "thursday",
+    6: "friday",
+    7: "saturday",
+  };
 
-	for (let cls of shuffledClasses) {
+  return classes.sort((a, b) => {
+    // Determine day keys and day indices (Monday=0, Tuesday=1, etc.)
+    const dayAKey = dayKeys[a.date] || "monday"; // fallback if missing
+    const dayBKey = dayKeys[b.date] || "monday";
+    const dayIndexA = a.date - 2;
+    const dayIndexB = b.date - 2;
+
+    // Look up the start time (first element) in the schedulePriority array.
+    // If the start time isn't found, assign Infinity (i.e. very low priority).
+    const timePriorityA = schedulePriority[dayAKey].indexOf(a.time[0]);
+    const timePriorityB = schedulePriority[dayBKey].indexOf(b.time[0]);
+    const finalTimeA = timePriorityA === -1 ? Infinity : timePriorityA;
+    const finalTimeB = timePriorityB === -1 ? Infinity : timePriorityB;
+
+    // Combine the day and time priorities into one overall priority.
+    // Multiplying day index by 100 gives days a heavier weight.
+    const overallPriorityA = dayIndexA * 100 + finalTimeA;
+    const overallPriorityB = dayIndexB * 100 + finalTimeB;
+
+    return overallPriorityA - overallPriorityB;
+  });
+}
+
+export const getClassesFromCourse = (course_id: string, classes: Class[], schedulePriority: SchedulePriority): Class[] => {
+	const filteredClasses = classes.filter((cls) => cls.course_id === course_id);
+	const shuffledClasses = shuffleArray(filteredClasses);
+	const prioritizedClasses = prioritizeClasses(shuffledClasses, schedulePriority);
+	// console.log(prioritizedClasses);
+	return prioritizedClasses;
+}
+
+export const fillClasses = (schedule: string[][], classes: Class[]): void => {
+	for (let cls of classes) {
 		// Deep copy the schedule
 		const temp_schedule = schedule.map(row => [...row]);
 

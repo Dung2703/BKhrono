@@ -1,5 +1,5 @@
 import { getClassesList, parseClassString, getClassesFromCourse, fillClasses } from "./data";
-import { Class, Course } from "./types";
+import { Class, Course, SchedulePriority, SchedulePriorityStrings } from "./types";
 
 
 //Arrays to be processed further
@@ -42,18 +42,19 @@ export const setClassesArrays = (rawData: string) => {
   return course_ids;
 };
 
-export const getSchedule = (): string[][] => {
+export const getSchedule = (schedulePriority: SchedulePriority): string[][] => {
   // Create schedule 12 rows x 6 columns
   const schedule: string[][] = Array.from({ length: 12 }, () => Array(6).fill("-1"));
 
   // Get classes from one course and fill them in the schedule
-  for (const course_id of course_ids) {
-    const classes = getClassesFromCourse(course_id, classes_lab);
+  const shuffled_course_ids = course_ids.sort(() => Math.random() - 0.5);
+  for (const course_id of shuffled_course_ids) {
+    const classes = getClassesFromCourse(course_id, classes_lab, schedulePriority);
     if (classes.length !== 0) {
       fillClasses(schedule, classes);
       continue;
     }
-    const classes2 = getClassesFromCourse(course_id, classes_nonlab);
+    const classes2 = getClassesFromCourse(course_id, classes_nonlab, schedulePriority);
     fillClasses(schedule, classes2);
   }
 
@@ -61,4 +62,16 @@ export const getSchedule = (): string[][] => {
   return schedule;
 }
 
-
+export const getSchedulePriority = (schedulePriorityStrings: SchedulePriorityStrings): SchedulePriority => {
+  // Convert string 7-8h to number 2; 8-9h to 3; etc.
+  const schedulePriority: SchedulePriority = {
+    monday: schedulePriorityStrings.monday.map((time) => parseInt(time.split("-")[0]) - 5),
+    tuesday: schedulePriorityStrings.tuesday.map((time) => parseInt(time.split("-")[0]) - 5),
+    wednesday: schedulePriorityStrings.wednesday.map((time) => parseInt(time.split("-")[0]) - 5),
+    thursday: schedulePriorityStrings.thursday.map((time) => parseInt(time.split("-")[0]) - 5),
+    friday: schedulePriorityStrings.friday.map((time) => parseInt(time.split("-")[0]) - 5),
+    saturday: schedulePriorityStrings.saturday.map((time) => parseInt(time.split("-")[0]) - 5),
+  };
+  // console.log(schedulePriority);
+  return schedulePriority;
+}

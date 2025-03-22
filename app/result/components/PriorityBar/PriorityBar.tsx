@@ -1,15 +1,32 @@
 "use client";
 import React, { useState } from 'react'
 import styles from './PriorityBar.module.css'
-import { useWeeklySchedule } from '@/app/utils/hooks'
 
-const PriorityBar = () => {
-  const dates = ['T2', 'T3', 'T4', 'T5', 'T6', 'T7',];
-  const times = ['7-8h', '8-9h', '9-10h', '10-11h', '11-12h', '12-13', '13-14', '14-15', '15-16', '16-17', '17-18', '18-19',];
+interface PriorityBarProps {
+  schedulePriority: {
+    monday: string[],
+    tuesday: string[],
+    wednesday: string[],
+    thursday: string[],
+    friday: string[],
+    saturday: string[]
+  },
+  setSchedulePriority: {
+    setMonday: React.Dispatch<React.SetStateAction<string[]>>,
+    setTuesday: React.Dispatch<React.SetStateAction<string[]>>,
+    setWednesday: React.Dispatch<React.SetStateAction<string[]>>,
+    setThursday: React.Dispatch<React.SetStateAction<string[]>>,
+    setFriday: React.Dispatch<React.SetStateAction<string[]>>,
+    setSaturday: React.Dispatch<React.SetStateAction<string[]>>
+  }
+}
+
+const PriorityBar = ({schedulePriority, setSchedulePriority} : PriorityBarProps) => {
+  const dates = ['T2', 'T3', 'T4', 'T5', 'T6', 'T7'];
+  const times = ['7-8h', '8-9h', '9-10h', '10-11h', '11-12h', '12-13h', '13-14h', '14-15h', '15-16h', '16-17h', '17-18h', '18-19h'];
   const [currentDate, setCurrentDate] = useState<string>('');
-  const { schedule, setters } = useWeeklySchedule();
-  const { monday, tuesday, wednesday, thursday, friday, saturday } = schedule;
-  const { setMonday, setTuesday, setWednesday, setThursday, setFriday, setSaturday } = setters;
+  const { monday, tuesday, wednesday, thursday, friday, saturday } = schedulePriority;
+  const { setMonday, setTuesday, setWednesday, setThursday, setFriday, setSaturday } = setSchedulePriority;
 
   const addTime = (time: string) => {
     if (!currentDate) {
@@ -43,9 +60,6 @@ const PriorityBar = () => {
       case 'T7':
         updateArray(saturday, setSaturday)
         break
-      // case 'CN':
-      //   updateArray(sunday, setSunday)
-      //   break
     }
   }
 
@@ -68,8 +82,6 @@ const PriorityBar = () => {
         return friday.includes(time)
       case 'T7':
         return saturday.includes(time)
-      // case 'CN':
-      //   return sunday.includes(time)
       default:
         return false
     }
@@ -107,19 +119,11 @@ const PriorityBar = () => {
           return true
         }
         return false
-      // case 'CN':
-      //   if (sunday.length > 0) {
-      //     return true
-      //   }
-      //   return false
     }
   }
 
   return (
     <div className={styles.container}>
-      {/* <div className={styles.top}>
-        <button>Prior</button>
-      </div> */}
       <div className={styles.bottom}>
         <div className={styles.date}>
           {

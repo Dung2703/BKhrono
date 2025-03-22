@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export const useWeeklySchedule = () => {
+export const useSchedulePriority = () => {
   const [monday, setMonday] = useState<string[]>([])
   const [tuesday, setTuesday] = useState<string[]>([])
   const [wednesday, setWednesday] = useState<string[]>([])

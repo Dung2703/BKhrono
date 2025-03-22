@@ -18,3 +18,21 @@ export interface Class {
   time_lab?: number[];
   room_lab?: string;
 }
+
+export interface SchedulePriority {
+  monday: number[];
+  tuesday: number[];
+  wednesday: number[];
+  thursday: number[];
+  friday: number[];
+  saturday: number[];
+}
+
+export interface SchedulePriorityStrings {
+  monday: string[];
+  tuesday: string[];
+  wednesday: string[];
+  thursday: string[];
+  friday: string[];
+  saturday: string[];
+}

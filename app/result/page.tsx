@@ -7,9 +7,11 @@ import Generate from './components/GenerateBar/Generate';
 import HomeButton from './components/HomeButton/HomeButton';
 import LogoSwitch from '../components/LogoSwitch/LogoSwitch';
 import { useState } from 'react';
+import { useSchedulePriority } from '@/app/utils/hooks';
 
 const ResultPage = () => {
   const [schedule, setSchedule] = useState<string[][]>(Array.from({ length: 12 }, () => Array(6).fill("-1")));
+  const {schedule: schedulePriority, setters: setSchedulePriority} = useSchedulePriority();
   return (
     <div className={styles.container}>
       <div className={styles.leftSide}>
@@ -17,7 +19,7 @@ const ResultPage = () => {
           <HomeButton />
         </div>
         <div className={styles.priorityBar}>
-          <PriorityBar />
+          <PriorityBar schedulePriority={schedulePriority} setSchedulePriority={setSchedulePriority}/>
         </div>
       </div>
       <div className={styles.resultSection}>
@@ -30,7 +32,7 @@ const ResultPage = () => {
       </div>
       <div className={styles.rightSide}>
         <div className={styles.generateButton}>
-          <Generate isVisible={false} setSchedule={setSchedule}/> 
+          <Generate isVisible={false} setSchedule={setSchedule} schedulePriorityStrings={schedulePriority}/> 
         </div>
         <LogoSwitch />
       </div>
