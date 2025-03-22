@@ -37,21 +37,14 @@ export const setClassesArrays = (rawData: string) => {
     });
   });
 
-  console.log("Non-Lab Array:", classes_nonlab);
-  console.log("Lab Array:", classes_lab);
+  // console.log("Non-Lab Array:", classes_nonlab);
+  // console.log("Lab Array:", classes_lab);
   return course_ids;
 };
 
 export const getSchedule = (): string[][] => {
   // Create schedule 12 rows x 6 columns
   const schedule: string[][] = Array.from({ length: 12 }, () => Array(6).fill("-1"));
-
-  console.log(classes_nonlab);
-  console.log(classes_lab);
-
-  // Fill in the schedule
-  // fillClasses(schedule, classes_lab);
-  // fillClasses(schedule, classes_nonlab);
 
   // Get classes from one course and fill them in the schedule
   for (const course_id of course_ids) {
@@ -64,13 +57,7 @@ export const getSchedule = (): string[][] => {
     fillClasses(schedule, classes2);
   }
 
-  console.log(schedule);
-
-  // console.log(classes_lab);
-  // console.log(classes_nonlab);
   // console.log(schedule);
-  // saveAs(new Blob([JSON.stringify(classes_lab)], { type: "application/json" }), "classes_lab.json");
-  // saveAs(new Blob([JSON.stringify(classes_nonlab)], { type: "application/json" }), "classes_nonlab.json");
   return schedule;
 }
 

@@ -230,8 +230,17 @@ export const getClassesFromCourse = (course_id: string, classes: Class[]): Class
 	return classes.filter((cls) => cls.course_id === course_id);
 }
 
+function shuffleArray<T>(array: T[]): T[] {
+	return array
+		.map(value => ({ value, sort: Math.random() }))
+		.sort((a, b) => a.sort - b.sort)
+		.map(({ value }) => value);
+}
+
 export const fillClasses = (schedule: string[][], classes: Class[]): void => {
-	for (let cls of classes) {
+	const shuffledClasses = shuffleArray(classes);
+
+	for (let cls of shuffledClasses) {
 		// Deep copy the schedule
 		const temp_schedule = schedule.map(row => [...row]);
 
@@ -243,8 +252,6 @@ export const fillClasses = (schedule: string[][], classes: Class[]): void => {
 
 		const colIndex = date - 2;
 		const colIndexLab = (date_lab || -1) - 2;
-
-		console.log(cls);
 
 		// Check conflicts for main class
 		for (let i = start; i <= end; i++) {
