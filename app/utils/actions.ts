@@ -1,4 +1,4 @@
-import { getClassesList, parseClassString } from "./data";
+import { getClassesList, parseClassString, getClassesFromCourse, fillClasses } from "./data";
 import { Class, Course } from "./types";
 
 
@@ -7,6 +7,7 @@ const course_ids: string[] = []; // Used to setCourses in SideBar
 const courses: Course[] = []; // Used to check if the class is already in the array
 const classes_nonlab: Class[] = [];
 const classes_lab: Class[] = [];
+
 
 
 export const setClassesArrays = (rawData: string) => {
@@ -20,12 +21,13 @@ export const setClassesArrays = (rawData: string) => {
           || courses.some((course) => course.course_id === classObj.course_id && course.class === classObj.class && course.class_lab === undefined)
          ) return;
       courses.push({ course_id: classObj.course_id, class: classObj.class, class_lab: classObj.class_lab });
-
-      if (classObj.type === "non-lab") {
-        classes_nonlab.push(classObj); // Add to non-lab array
-      } 
-      else if (classObj.type === "lab") {
-        classes_lab.push(classObj); // Add to lab array
+      if (classObj.current_quantity < classObj.max_quantity) {
+        if (classObj.type === "non-lab") {
+          classes_nonlab.push(classObj); // Add to non-lab array
+        } 
+        else if (classObj.type === "lab") {
+          classes_lab.push(classObj); // Add to lab array
+        }
       }
 
       // Add course_id to the course_ids array
@@ -40,42 +42,35 @@ export const setClassesArrays = (rawData: string) => {
   return course_ids;
 };
 
-export const getSchedule = (): number[][] => {
+export const getSchedule = (): string[][] => {
   // Create schedule 12 rows x 6 columns
-  const schedule: number[][] = Array.from({ length: 12 }, () => Array(6).fill(-1));
-  let isOccupied = false;
+  const schedule: string[][] = Array.from({ length: 12 }, () => Array(6).fill("-1"));
 
-  classes_nonlab.forEach((cls, class_index) => {
-    const { class: classID, date, time, date_lab, time_lab, class_lab } = cls;
-    const [start, end] = time;
-    const [start_lab, end_lab] = time_lab || [0, 0];
+  console.log(classes_nonlab);
+  console.log(classes_lab);
 
-    // Calculate row index for the class
-    // EXP: start = 2 => rowIndex = 0 => Time slot 7-8h
-    const rowIndex = start - 2; 
-    const rowIndexLab = start_lab - 2;
+  // Fill in the schedule
+  // fillClasses(schedule, classes_lab);
+  // fillClasses(schedule, classes_nonlab);
 
-    // Calculate column index for the class
-    // EXP: date = 2 => colIndex = 0 => Monday
-    const colIndex = date - 2;
-    const colIndexLab = (date_lab || -1) - 2;
-
-    // Fill the schedule with class data. class_index means the cell is occupied with Classes[class_index]
-    for (let i = 0; i < end - start + 1; i++) {
-      if (schedule[rowIndex + i][colIndex] !== -1) {
-        isOccupied = true;
-        break;
-      }
-      schedule[rowIndex + i][colIndex] = class_index;
+  // Get classes from one course and fill them in the schedule
+  for (const course_id of course_ids) {
+    const classes = getClassesFromCourse(course_id, classes_lab);
+    if (classes.length !== 0) {
+      fillClasses(schedule, classes);
+      continue;
     }
-    if (!isOccupied && class_lab) {
-      for (let i = 0; i < end_lab - start_lab + 1; i++) {
-        schedule[rowIndexLab + i][colIndexLab] = class_index;
-      }
-    }
-  });
+    const classes2 = getClassesFromCourse(course_id, classes_nonlab);
+    fillClasses(schedule, classes2);
+  }
 
+  console.log(schedule);
 
+  // console.log(classes_lab);
+  // console.log(classes_nonlab);
+  // console.log(schedule);
+  // saveAs(new Blob([JSON.stringify(classes_lab)], { type: "application/json" }), "classes_lab.json");
+  // saveAs(new Blob([JSON.stringify(classes_nonlab)], { type: "application/json" }), "classes_nonlab.json");
   return schedule;
 }
 

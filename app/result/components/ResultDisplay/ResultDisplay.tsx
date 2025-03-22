@@ -1,9 +1,7 @@
 import React from "react";
 import styles from "./ResultDisplay.module.css";
-import { getSchedule } from "@/app/utils/actions";
 
-const ResultDisplay = () => {
-  const schedule: number[][]= getSchedule();
+const ResultDisplay = ({schedule} : {schedule: string[][]}) => {
   // console.log(schedule);
 
   return (
@@ -26,9 +24,9 @@ const ResultDisplay = () => {
               <tr key={index}>
                 <th className={styles.time}>{index + 7}-{index + 8}</th>
                 {
-                  cell.map((classIndex, colIndex) => (
-                    <td key={colIndex} className={styles.cell}>
-                      {/* {classIndex !== -1 ? `${Classes[classIndex].course_id}` : ""} */}
+                  cell.map((classIndex, index) => (
+                    <td key={index} className={styles.cell}>
+                      {classIndex !== "-1" ? `${classIndex}` : ""}
                     </td>
                   ))
                 }

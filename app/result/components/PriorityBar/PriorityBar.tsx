@@ -1,18 +1,15 @@
 "use client";
 import React, { useState } from 'react'
 import styles from './PriorityBar.module.css'
+import { useWeeklySchedule } from '@/app/utils/hooks'
 
 const PriorityBar = () => {
-  const dates = ['T2', 'T3', 'T4', 'T5', 'T6', 'T7',]
-  const times = ['7-8h', '8-9h', '9-10h', '10-11h', '11-12h', '12-13', '13-14', '14-15', '15-16', '16-17', '17-18', '18-19',]
-  const [currentDate, setCurrentDate] = useState<string>('')
-  const [monday, setMonday] = useState<string[]>([])
-  const [tuesday, setTuesday] = useState<string[]>([])
-  const [wednesday, setWednesday] = useState<string[]>([])
-  const [thursday, setThursday] = useState<string[]>([])
-  const [friday, setFriday] = useState<string[]>([])
-  const [saturday, setSaturday] = useState<string[]>([])
-  // const [sunday, setSunday] = useState<string[]>([])
+  const dates = ['T2', 'T3', 'T4', 'T5', 'T6', 'T7',];
+  const times = ['7-8h', '8-9h', '9-10h', '10-11h', '11-12h', '12-13', '13-14', '14-15', '15-16', '16-17', '17-18', '18-19',];
+  const [currentDate, setCurrentDate] = useState<string>('');
+  const { schedule, setters } = useWeeklySchedule();
+  const { monday, tuesday, wednesday, thursday, friday, saturday } = schedule;
+  const { setMonday, setTuesday, setWednesday, setThursday, setFriday, setSaturday } = setters;
 
   const addTime = (time: string) => {
     if (!currentDate) {

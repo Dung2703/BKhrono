@@ -6,9 +6,10 @@ import ResultDisplay from './components/ResultDisplay/ResultDisplay'
 import Generate from './components/GenerateBar/Generate';
 import HomeButton from './components/HomeButton/HomeButton';
 import LogoSwitch from '../components/LogoSwitch/LogoSwitch';
-
+import { useState } from 'react';
 
 const ResultPage = () => {
+  const [schedule, setSchedule] = useState<string[][]>(Array.from({ length: 12 }, () => Array(6).fill("-1")));
   return (
     <div className={styles.container}>
       <div className={styles.leftSide}>
@@ -24,12 +25,12 @@ const ResultPage = () => {
           <TopBar />
         </div>
         <div className={styles.resultDisplay}>
-          <ResultDisplay />
+          <ResultDisplay schedule={schedule} />
         </div>
       </div>
       <div className={styles.rightSide}>
         <div className={styles.generateButton}>
-          <Generate isVisible={false}/> 
+          <Generate isVisible={false} setSchedule={setSchedule}/> 
         </div>
         <LogoSwitch />
       </div>
