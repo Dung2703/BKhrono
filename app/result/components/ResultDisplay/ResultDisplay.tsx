@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./ResultDisplay.module.css";
-import { getSchedule } from "@/app/utils/data";
-import { Classes } from "@/app/utils/placeholder";
+import { getSchedule } from "@/app/utils/actions";
 
 const ResultDisplay = () => {
   const schedule: number[][]= getSchedule();
+  // console.log(schedule);
 
   return (
     <div className={styles.container}>
@@ -28,7 +28,7 @@ const ResultDisplay = () => {
                 {
                   cell.map((classIndex, colIndex) => (
                     <td key={colIndex} className={styles.cell}>
-                      {classIndex !== -1 ? `${Classes[classIndex].course_id}` : ""}
+                      {/* {classIndex !== -1 ? `${Classes[classIndex].course_id}` : ""} */}
                     </td>
                   ))
                 }
