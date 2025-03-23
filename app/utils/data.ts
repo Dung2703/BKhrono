@@ -91,7 +91,16 @@ const getClassNonLab = (subclass: RegExpMatchArray, index: number, classes: RegE
     temp = temp.slice(5)
     const indexOfTab = temp.indexOf('\t')
     const numberStudent = temp.slice(0, indexOfTab)
-    temp = temp.slice(indexOfTab + 54)
+	
+	if (temp.includes('V')) {
+		temp = temp.slice(indexOfTab + 53)
+	}
+	else {
+		temp = temp.slice(indexOfTab + 54)
+	}
+	console.log(temp);
+	
+	
     const day = temp.slice(0, 1)
     temp = temp.slice(2)
     let time = '['
@@ -116,6 +125,8 @@ const getClassNonLab = (subclass: RegExpMatchArray, index: number, classes: RegE
     time += result.toString() + ']'
     const indexOfDash = temp.indexOf('-')
     const room = temp.slice(0, indexOfDash + 4)
+	console.log(subject + ' ' + groupClass + ' ' + numberStudent + ' ' + day + ' ' + time + ' ' + room);
+	
     return subject + ' ' + groupClass + ' ' + numberStudent + ' ' + day + ' ' + time + ' ' + room
 }
 
