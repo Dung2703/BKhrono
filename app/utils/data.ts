@@ -39,7 +39,7 @@ export const getClassesList = (data: string) => {
 
 				const match = searchArea.match(regex);
 
-				let subclassEndIndex = match ? str.indexOf(match[0], subclassStartIndex + 59) : str.length;
+				const subclassEndIndex = match ? str.indexOf(match[0], subclassStartIndex + 59) : str.length;
 
 
 				const subclassStr = str.slice(subclassStartIndex, subclassEndIndex);
@@ -294,7 +294,7 @@ export const getClassesFromCourse = (course_id: string, classes: Class[], schedu
 }
 
 export const fillClasses = (schedule: string[][], classes: Class[]): void => {
-	for (let cls of classes) {
+	for (const cls of classes) {
 		// Deep copy the schedule
 		const temp_schedule = schedule.map(row => [...row]);
 

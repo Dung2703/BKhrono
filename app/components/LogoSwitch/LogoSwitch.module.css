@@ -28,14 +28,15 @@
     background-position:  80% center;
     background-color: #fffb00; /* Light mode background color */
     border-color: black; /* Light mode border color */
-    background-image: url('https://freepngimg.com/thumb/emoji/81205-white-computing-cloud-emoji-free-download-image.png'); /* Path to cloud icon */
+    /* get cloud in public folder */
+    background-image: url('/cloud.webp'); /* Path to cloud icon */
 }
 
 .switch.dark {
     background-position: 25% center;
     background-color: #000000; /* Dark mode background color */
     border-color: white; /* Dark mode border color */
-    background-image: url(' https://static.vecteezy.com/system/resources/previews/037/748/027/large_2x/cute-stars-at-night-free-png.png'); /* Path to star icon */
+    background-image: url('/stars.webp'); /* Path to star icon */
 }
 
 .slider {

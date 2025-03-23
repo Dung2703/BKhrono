@@ -1,10 +1,11 @@
 import styles from './LogoSwitch.module.css';
 import ThemeToggle from './Theme_Toggle';
+import Image from 'next/image';
 
 const LogoSwitch = () => {
   return (
     <div className={styles.container}>
-      <img src="https://hcmut.edu.vn/img/nhanDienThuongHieu/01_logobachkhoasang.png" height="auto" width="150px"/>
+      <Image src="/logo" width={150} alt="logo"/>
       <ThemeToggle/>
     </div>
   );

@@ -1,18 +1,18 @@
-import React, { Dispatch, SetStateAction } from "react";
+// import React, { Dispatch, SetStateAction } from "react";
 import styles from "./HiddenBar.module.css";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 
 interface HiddenBarProps {
   isVisible: boolean;
-  setIsVisible: Dispatch<SetStateAction<boolean>>;
+  // setIsVisible: Dispatch<SetStateAction<boolean>>;
 }
 
-const HiddenBar: React.FC<HiddenBarProps> = ({ isVisible, setIsVisible }) => {
+const HiddenBar: React.FC<HiddenBarProps> = ({ isVisible /*, setIsVisible*/ }) => {
   const [parent] = useAutoAnimate();
 
-  const handleClick = () => {
-    setIsVisible(!isVisible);
-  };
+  // const handleClick = () => {
+  //   setIsVisible(!isVisible);
+  // };
 
   return (
       <div ref={parent} 
