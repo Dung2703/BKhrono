@@ -29,7 +29,12 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+        <div className="mobile-warning">
+          <p>Please use another device, mobile is not supported for BKhrono.</p>
+        </div>
+        <div className="desktop-only">
+          {children}
+        </div>
       </body>
     </html>
   );

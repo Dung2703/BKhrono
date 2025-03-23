@@ -127,10 +127,6 @@ const getClassNonLab = (subclass: RegExpMatchArray, index: number, classes: RegE
     return subject + ' ' + groupClass + ' ' + numberStudent + ' ' + day + ' ' + time + ' ' + room
 }
 
-// const getClassLab = (course: string) => {
-
-// }
-
 const getClassLab = (subclassStr: string, subject: string): string => {
 	// Extract the main and lab class codes
 	const matchResult = subclassStr.match(/CC\d{2}_CC\d{2}/);

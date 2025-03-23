@@ -6,6 +6,7 @@ import TextInputBox from './components/TextInputBox/TextInputBox';
 import FileInputBox from './components/FileInputBox/FileInputBox';
 import LogoSwitch from '../components/LogoSwitch/LogoSwitch';
 import Link from 'next/link';
+import Contact from '../components/Contact/Contact';
 
 const HomePage = () => {
   const [courses, setCourses] = useState<string[]>([]);
@@ -26,6 +27,7 @@ const HomePage = () => {
         <Link href="/result">
           <button className={styles.button}>Continue</button>
         </Link>
+        <Contact/>
         <LogoSwitch />
       </div>
     </div>

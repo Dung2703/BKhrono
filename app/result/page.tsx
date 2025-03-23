@@ -6,6 +6,7 @@ import ResultDisplay from './components/ResultDisplay/ResultDisplay'
 import Generate from './components/GenerateBar/Generate';
 import HomeButton from './components/HomeButton/HomeButton';
 import LogoSwitch from '../components/LogoSwitch/LogoSwitch';
+import Contact from '../components/Contact/Contact';
 import { useState } from 'react';
 import { useSchedulePriority } from '@/app/utils/hooks';
 
@@ -34,6 +35,7 @@ const ResultPage = () => {
         <div className={styles.generateButton}>
           <Generate isVisible={false} setSchedule={setSchedule} schedulePriorityStrings={schedulePriority}/> 
         </div>
+        <Contact/>
         <LogoSwitch />
       </div>
     </div>

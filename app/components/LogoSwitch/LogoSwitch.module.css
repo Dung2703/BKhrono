@@ -28,7 +28,6 @@
     background-position:  80% center;
     background-color: #fffb00; /* Light mode background color */
     border-color: black; /* Light mode border color */
-    /* get cloud in public folder */
     background-image: url('/cloud.webp'); /* Path to cloud icon */
 }
 
