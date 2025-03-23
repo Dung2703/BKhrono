@@ -1,4 +1,3 @@
-import { a } from 'framer-motion/client';
 import styles from './LogoSwitch.module.css';
 import ThemeToggle from './Theme_Toggle';
 import Image from 'next/image';
