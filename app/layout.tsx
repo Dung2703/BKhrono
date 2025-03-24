@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ChatProvider } from "@/app/contexts/ChatContext";
+import MobileWrapper from "@/app/components/MobileWrapper";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -30,14 +31,11 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <div className="mobile-warning">
-          <p>Please use another device, mobile is not supported for BKhrono.</p>
-        </div>
-        <div className="desktop-only">
-          <ChatProvider>
+        <ChatProvider>
+          <MobileWrapper>
             {children}
-          </ChatProvider>
-        </div>
+          </MobileWrapper>
+        </ChatProvider>
       </body>
     </html>
   );

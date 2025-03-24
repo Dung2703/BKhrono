@@ -38,12 +38,12 @@ a {
 
 .mobile-warning {
     display: none;
-  }
+}
   
-  .desktop-only {
+.desktop-only {
     display: block;
-  }
-  
+}
+
 @media (max-width: 1024px) {
     .mobile-warning {
         display: flex;

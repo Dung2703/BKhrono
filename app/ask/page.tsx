@@ -57,7 +57,7 @@ function AskPage() {
         <textarea
           rows={1}
           className={styles.textInput}
-          placeholder="Send a message..."
+          placeholder="Ask anything"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleKeyDown}
