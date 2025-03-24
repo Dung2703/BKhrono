@@ -33,13 +33,10 @@ The team members are:
 3. Tran Tri Dung
 4. Nguyen Duc Nguyen
 5. Nguyen Dinh Phi Long
-Leader's contact: truc.nguyenminh@hcmut.edu.vn
+Leader's contact(he): truc.nguyenminh@hcmut.edu.vn
 
 If the user's message is about how to use the web or asking for tutorial, reply with:
 "${tutorialMsg}"
-
-If and only if the user ask more specific about the team, reply with:
-"Team 7 CC04 Professional Skills for Engineers"
 
 Otherwise, answer the user's message normally.
 `.trim();
