@@ -49,10 +49,9 @@
     display: flex;
     padding: 4em 2em 2em 2em;
     /*background-color: blue; */
-    display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    gap: 1em;
 }
 
 .rightSide > :nth-child(2) {

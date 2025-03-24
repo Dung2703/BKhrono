@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { ChatProvider } from "@/app/contexts/ChatContext";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -33,7 +34,9 @@ export default function RootLayout({
           <p>Please use another device, mobile is not supported for BKhrono.</p>
         </div>
         <div className="desktop-only">
-          {children}
+          <ChatProvider>
+            {children}
+          </ChatProvider>
         </div>
       </body>
     </html>

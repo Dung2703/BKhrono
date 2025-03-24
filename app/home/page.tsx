@@ -4,9 +4,8 @@ import styles from './page.module.css';
 import SideBar from './components/SideBar/SideBar';
 import TextInputBox from './components/TextInputBox/TextInputBox';
 import FileInputBox from './components/FileInputBox/FileInputBox';
-import LogoSwitch from '../components/LogoSwitch/LogoSwitch';
 import Link from 'next/link';
-import Contact from '../components/Contact/Contact';
+import RightBar from '../components/RightBar/RightBar';
 
 const HomePage = () => {
   const [courses, setCourses] = useState<string[]>([]);
@@ -27,8 +26,7 @@ const HomePage = () => {
         <Link href="/result">
           <button className={styles.button}>Continue</button>
         </Link>
-        <Contact/>
-        <LogoSwitch />
+        <RightBar />
       </div>
     </div>
   );

@@ -7,7 +7,7 @@
 
 .sidebar {
     display: flex;
-    padding: 4em 2em 2em 2em;
+    padding: 2em;
     /* background-color: blue; */
 }
 
@@ -34,8 +34,9 @@
     padding: 2em;
     /* background-color: yellow; */
     display: flex;
-    justify-content: space-between;
     flex-direction: column;
+    justify-content: space-between;
+    gap: 4em;
 }
 
 .button {

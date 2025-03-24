@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@formkit/auto-animate": "^0.8.2",
+    "@google/generative-ai": "^0.24.0",
+    "dotenv": "^16.4.7",
     "file-saver": "^2.0.5",
     "formkit": "^1.6.9",
     "framer-motion": "^12.0.6",
