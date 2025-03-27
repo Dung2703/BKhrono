@@ -124,43 +124,40 @@ const PriorityBar = ({schedulePriority, setSchedulePriority} : PriorityBarProps)
 
   return (
     <div className={styles.container}>
-      <div className={styles.bottom}>
-        <div className={styles.date}>
-          {
-            dates.map((date, index) => (
-              <button 
-              key={index} 
-              className={`${styles.date} 
-              ${currentDate === date ? styles.activeDate : ''}
-              ${updateLayoutDay(date) ? styles.chosenDate : ''}`}
-              onClick={() => {
-                  if (currentDate === date) setCurrentDate('')
-                  else setCurrentDate(date)
-                }
+      <div className={styles.date}>
+        {
+          dates.map((date, index) => (
+            <button 
+            key={index} 
+            className={`${styles.date} 
+            ${currentDate === date ? styles.activeDate : ''}
+            ${updateLayoutDay(date) ? styles.chosenDate : ''}`}
+            onClick={() => {
+                if (currentDate === date) setCurrentDate('')
+                else setCurrentDate(date)
               }
-              >{date}
-              </button>
-            ))
-          }
-        </div>
-        <div className={styles.time}>
-          {
-            times.map((time, index) => (
-              <button 
-              key={index} 
-              className={`${styles.hour} 
-              ${checkExistTime(time) ? styles.activeTime : ''}`}
-              onClick={() => {
-                  addTime(time)
-                }
-              }
-              >{time}
-              </button>
-            ))
-          }
-        </div>
+            }
+            >{date}
+            </button>
+          ))
+        }
       </div>
-      {/* <div className={styles.top}></div> */}
+      <div className={styles.time}>
+        {
+          times.map((time, index) => (
+            <button 
+            key={index} 
+            className={`${styles.hour} 
+            ${checkExistTime(time) ? styles.activeTime : ''}`}
+            onClick={() => {
+                addTime(time)
+              }
+            }
+            >{time}
+            </button>
+          ))
+        }
+      </div>
     </div>
   )
 }

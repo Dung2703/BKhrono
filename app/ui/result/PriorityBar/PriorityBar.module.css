@@ -6,38 +6,12 @@
     background-color: var(--bgSoft);
     display: flex;
     align-items: center;
-}
-
-/* .top {
-    font-weight: bold;
-    padding: 1em; 
-    background-color: yellow;
-}
-
-.top button {
-    padding: 0 1em;
-    font-size: 2rem;
-
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: #f0f0f0;
-    transition: background-color 0.3s, transform 0.2s;
-}
-
-.top button:hover {
-    background-color: #e0e0e0; 
-    transform: scale(0.95);   
-} */
-
-
-.bottom {
-    display: flex;
-    gap: 1em;
     padding: 1em;
+    gap: 1em;
 }
 
 .date, .time {
+    height: 80%;
     display: flex;
     flex-direction: column;
 }
@@ -82,74 +56,23 @@
     color: black !important;
 }
 
-/* Red */
-@media screen and (max-width: 1400px) {
+@media (max-width: 1240px) {
     .container {
-        border-radius: 40px;
+        flex-direction: column;
     }
-    .bottom {
-        padding: 0.75em;
-        gap: 0.75em;
-    }
-    .date button, .time button {
-        font-size: 1.125rem;
+    .date, .time {
+        flex-direction: row;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr); /* 6 buttons per row */
     }
 }
-
-/* Green */
-@media screen and (max-width: 1024px) {
-    .container {
-        border-radius: 30px;
-    }
-    .bottom {
-        padding: 0.5em;
-        gap: 0.5em;
-    }
-    .date button, .time button {
-        font-size: 1rem;
+@media (max-width: 992px) {
+    .date, .time {
+        grid-template-columns: repeat(3, 1fr); /* 6 buttons per row */
     }
 }
-
-/* Yellow */
-@media screen and (max-width: 768px) {
-    .container {
-        border-radius: 20px;
-    }
-    .bottom {
-        padding: 0.25em;
-        gap: 0.25em;
-    }
-    .date button, .time button {
-        font-size: 0.8rem;
-    }
-}
-
-/* Blue */
-@media screen and (max-width: 640px) {
-    .container {
-        border-radius: 20px;
-    }
-    .bottom {
-        padding: 0.25em;
-        gap: 0.25em;
-    }
-    .date button, .time button {
-        font-size: 0.65rem;
-    }
-}
-
-/* Brown */
-@media screen and (max-width: 480px) {
-    .container {
-        border-radius: 10px;
-        border: 1px solid black;
-    }
-    .bottom {
-        padding: 0;
-        gap: 0;
-    }
-    .date button, .time button {
-        font-size: 0.45rem;
-        border-width: 1px;
+@media (max-width: 576px) {
+    .date, .time {
+        grid-template-columns: repeat(2, 1fr); /* 6 buttons per row */
     }
 }

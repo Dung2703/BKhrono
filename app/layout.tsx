@@ -4,6 +4,7 @@ import { ChatProvider } from "@/app/contexts/ChatContext";
 import RightBar from "@/app/ui/components/RightBar/RightBar";
 import Footer from "@/app/ui/components/Footer/Footer";
 import "./globals.css";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,8 +31,8 @@ export default function RootLayout({
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-E7R69QRCN3"></script>
-        <script
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-E7R69QRCN3" id="0" />
+        <Script id="1"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];

@@ -4,19 +4,25 @@
     border: 3px solid black;
     border-radius: 20px;
     background-color: var(--bgSoft);
-    height: 100%;
+    width: 100%;
 }
 
 .header {
+    display: flex;
     font-weight: bold;
     font-size: 2rem;
     padding: 1em;
     text-align: center;
-    border-bottom: 3px solid black;
     color: var(--text);
 }
 
+.divider {
+    height: 3px;
+    background-color: black;
+}
+
 .body {
+    flex: 1;
     display: flex;
     flex-direction: column;
 }
@@ -33,54 +39,23 @@
     align-items: center;
 }
 
-@media screen and (max-width: 1400px) {
-    .header, .list {
-        padding: 0.8em;
-    }
+@media (max-width: 1240px) {
+    .container, .list {
+        flex-direction: row;
+    } 
     .header {
-        font-size: 1.75rem;
+        align-items: center;
+        padding: 1em 0.5em;
+    }
+    .divider {
+        height: unset;
+        width: 3px;
     }
     .list {
-        font-size: 1.5rem;
-        gap: 0.8em;
-    }
-}
-
-@media screen and (max-width: 1024px) {
-    .header, .list {
-        padding: 0.6em;
-    }
-    .header {
-        font-size: 1.5rem;
-    }
-    .list {
-        font-size: 1.25rem;
-        gap: 0.6em;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .header, .list {
-        padding: 0.4em;
-    }
-    .header {
-        font-size: 1.25rem;
-    }
-    .list {
-        font-size: 1rem;
-        gap: 0.4em;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .header, .list {
-        padding: 0.3em;
-    }
-    .header {
-        font-size: 1rem;
-    }
-    .list {
-        font-size: 0.75rem;
-        gap: 0.3em;
+        height: 100%;
+        text-align: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 1em 0.5em;
     }
 }

@@ -4,6 +4,7 @@ const SideBar = ({courses} : {courses: string[]}) => {
   return (
     <div className={styles.container}>
       <div className={styles.header}>Courses</div>
+      <div className={styles.divider}></div>
       <div className={styles.body}>
         <ul className={styles.list}>
           {courses.map((course, index) => (

@@ -1,24 +1,30 @@
 .container {
     flex: 1;
     display: flex;
-    gap: 4em;
+    gap: calc(2em + 2vw);;
 }
 
 .sidebar {
     display: flex;
-    /* background-color: blue; */
 }
 
 .inputSection {
     flex: 1;
-    /* background-color: green; */
 }
 
 .rightBar {
     padding: 2em;
-    /* background-color: yellow; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 4em;
+}
+
+@media (max-width: 1240px) {
+    .container {
+        flex-direction: column;
+    } 
+    .inputSection {
+        min-height: 100vh;
+    }
 }

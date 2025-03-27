@@ -34,6 +34,7 @@ The team members are:
 4. Nguyen Duc Nguyen
 5. Nguyen Dinh Phi Long
 Leader's contact(he): truc.nguyenminh@hcmut.edu.vn
+Tech stack: ReactJS, NextJS, NodeJS, TypeScript, Google Generative AI
 
 If the user's message is about how to use the web or asking for tutorial, reply with:
 "${tutorialMsg}"

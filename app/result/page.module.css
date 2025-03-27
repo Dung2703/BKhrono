@@ -8,7 +8,6 @@
 
 .leftSide {
     display: flex;
-    /* background-color: red; */
 }
 
 .priorityBar {
@@ -16,7 +15,6 @@
 }
 
 .resultSection {
-    /*background-color: green; */
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -27,19 +25,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-color: yellow; */
 }
 
 .resultDisplay {
     flex: 1;
     display: flex;
-    /* background-color: aqua; */
 }
 
 .rightSide {
     display: flex;
     padding: 4em 2em 2em 2em;
-    /*background-color: blue; */
     flex-direction: column;
     align-items: center;
     gap: 1em;
@@ -49,4 +44,8 @@
     margin-top: 2em;
 }
 
-
+@media (max-width: 1240px) {
+    .container {
+        flex-direction: column;
+    } 
+}

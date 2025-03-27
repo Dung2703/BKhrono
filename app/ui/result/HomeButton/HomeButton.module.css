@@ -8,35 +8,3 @@
   color: var(--textSoft);
   font-weight: 700;
 }
-  
-/* Red */
-@media screen and (max-width: 1400px) {
-  .homeButton {
-    padding: 0.75em 0.5em;
-  }
-}
-
-/* Green */
-@media screen and (max-width: 1024px) {
-  .homeButton {
-    padding: 0.75em 0.5em;
-  }
-}
-
-/* Yellow */
-@media screen and (max-width: 768px) {
-  .homeButton {
-    font-size: 0.8rem;
-    padding: 0.5em 0.25em;
-  }
-}
-
-/* Brown */
-@media screen and (max-width: 480px) {
-  .homeButton {
-    font-size: 0.5rem;
-  }
-}
-  
- 
-  
