@@ -21,14 +21,16 @@ export const setClassesArrays = (rawData: string) => {
           || courses.some((course) => course.course_id === classObj.course_id && course.class === classObj.class && course.class_lab === undefined)
          ) return;
       courses.push({ course_id: classObj.course_id, class: classObj.class, class_lab: classObj.class_lab });
-      if (classObj.current_quantity < classObj.max_quantity) {
+      
+      // Uncomment this if you want to check the max quantity of classes
+      // if (classObj.current_quantity < classObj.max_quantity) {
         if (classObj.type === "non-lab") {
           classes_nonlab.push(classObj); // Add to non-lab array
         } 
         else if (classObj.type === "lab") {
           classes_lab.push(classObj); // Add to lab array
         }
-      }
+      // }
 
       // Add course_id to the course_ids array
       if (!course_ids.includes(classObj.course_id)) {

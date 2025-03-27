@@ -1,18 +1,19 @@
 "use client";
-import { useState } from "react";
 import styles from "./page.module.css";
 import SideBar from "@/app/ui/home/SideBar/SideBar";
 import TextInputBox from "@/app/ui/home/TextInputBox/TextInputBox";
+import { useCourses } from "@/app/contexts/CoursesContext";
 
 const HomePage = () => {
-  const [courses, setCourses] = useState<string[]>([]);
+  const { courses, setCourses } = useCourses();
+
   return (
     <div className={styles.container}>
       <div className={styles.sidebar}>
-        <SideBar courses={courses}/>
+        <SideBar courses={courses} />
       </div>
       <div className={styles.inputSection}>
-        <TextInputBox setCourses={setCourses}/>
+        <TextInputBox setCourses={setCourses} />
       </div>
     </div>
   );

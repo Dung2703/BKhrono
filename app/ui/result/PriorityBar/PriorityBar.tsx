@@ -1,27 +1,9 @@
 "use client";
 import React, { useState } from 'react'
 import styles from './PriorityBar.module.css'
+import { useSchedulePriorityProps } from '@/app/utils/types'
 
-interface PriorityBarProps {
-  schedulePriority: {
-    monday: string[],
-    tuesday: string[],
-    wednesday: string[],
-    thursday: string[],
-    friday: string[],
-    saturday: string[]
-  },
-  setSchedulePriority: {
-    setMonday: React.Dispatch<React.SetStateAction<string[]>>,
-    setTuesday: React.Dispatch<React.SetStateAction<string[]>>,
-    setWednesday: React.Dispatch<React.SetStateAction<string[]>>,
-    setThursday: React.Dispatch<React.SetStateAction<string[]>>,
-    setFriday: React.Dispatch<React.SetStateAction<string[]>>,
-    setSaturday: React.Dispatch<React.SetStateAction<string[]>>
-  }
-}
-
-const PriorityBar = ({schedulePriority, setSchedulePriority} : PriorityBarProps) => {
+const PriorityBar = ({schedulePriority, setSchedulePriority} : useSchedulePriorityProps) => {
   const dates = ['T2', 'T3', 'T4', 'T5', 'T6', 'T7'];
   const times = ['7-8h', '8-9h', '9-10h', '10-11h', '11-12h', '12-13h', '13-14h', '14-15h', '15-16h', '16-17h', '17-18h', '18-19h'];
   const [currentDate, setCurrentDate] = useState<string>('');

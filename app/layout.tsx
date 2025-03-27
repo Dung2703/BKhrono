@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ChatProvider } from "@/app/contexts/ChatContext";
+import { CoursesProvider } from "@/app/contexts/CoursesContext";
+import { SchedulePriorityProvider } from "./contexts/SchedulePriorityContext";
 import RightBar from "@/app/ui/components/RightBar/RightBar";
 import Footer from "@/app/ui/components/Footer/Footer";
 import "./globals.css";
@@ -48,7 +50,11 @@ export default function RootLayout({
           <div className="content">
             <div className="child">
               <ChatProvider>
-                {children}
+                <CoursesProvider>
+                  <SchedulePriorityProvider>
+                    {children}
+                  </SchedulePriorityProvider>
+                </CoursesProvider>
               </ChatProvider>
             </div>
             <div className="right-bar">

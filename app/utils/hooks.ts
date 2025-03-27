@@ -9,7 +9,7 @@ export const useSchedulePriority = () => {
   const [saturday, setSaturday] = useState<string[]>([])
 
   return {
-    schedule: { monday, tuesday, wednesday, thursday, friday, saturday },
-    setters: { setMonday, setTuesday, setWednesday, setThursday, setFriday, setSaturday },
+    schedulePriority: { monday, tuesday, wednesday, thursday, friday, saturday },
+    setSchedulePriority: { setMonday, setTuesday, setWednesday, setThursday, setFriday, setSaturday },
   }
 }

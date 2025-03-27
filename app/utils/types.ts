@@ -36,3 +36,22 @@ export interface SchedulePriorityStrings {
   friday: string[];
   saturday: string[];
 }
+
+export interface useSchedulePriorityProps {
+  schedulePriority: {
+    monday: string[],
+    tuesday: string[],
+    wednesday: string[],
+    thursday: string[],
+    friday: string[],
+    saturday: string[]
+  },
+  setSchedulePriority: {
+    setMonday: React.Dispatch<React.SetStateAction<string[]>>,
+    setTuesday: React.Dispatch<React.SetStateAction<string[]>>,
+    setWednesday: React.Dispatch<React.SetStateAction<string[]>>,
+    setThursday: React.Dispatch<React.SetStateAction<string[]>>,
+    setFriday: React.Dispatch<React.SetStateAction<string[]>>,
+    setSaturday: React.Dispatch<React.SetStateAction<string[]>>
+  }
+}
