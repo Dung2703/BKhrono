@@ -10,7 +10,7 @@ function Footer() {
   return (
     <div className={styles.container}>
       <div className={styles.contact}>
-        This is the contact information
+      BKhrono &copy; {new Date().getFullYear()} Group 7 CO2001 CC04 HK242. All rights reserved. Team leader's contact: truc.nguyenminh@hcmut.edu.vn
       </div>
       <Link href={isResultPage ? "/" : "/result"} className={styles.button}>{isResultPage ? "Home" : "Result"}</Link>
     </div>
