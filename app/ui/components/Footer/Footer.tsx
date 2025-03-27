@@ -12,7 +12,7 @@ function Footer() {
       <div className={styles.contact}>
         This is the contact information
       </div>
-      <Link href={isResultPage ? "/" : "/result"} className={styles.button}>{isResultPage ? "Return" : "Continue"}</Link>
+      <Link href={isResultPage ? "/" : "/result"} className={styles.button}>{isResultPage ? "Home" : "Result"}</Link>
     </div>
   );
 }

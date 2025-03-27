@@ -1,7 +1,7 @@
 "use client";
 import styles from "./page.module.css"
 import PriorityBar from "@/app/ui/result/PriorityBar/PriorityBar"
-import TopBar from "@/app/ui/result/TopBar/TopBar"
+// import TopBar from "@/app/ui/result/TopBar/TopBar"
 import ResultDisplay from "@/app/ui/result/ResultDisplay/ResultDisplay"
 import Generate from "@/app/ui/result/GenerateBar/Generate";
 import { useState } from "react";
