@@ -1,37 +1,37 @@
-'use client';
-import { useState } from 'react';
-import styles from './page.module.css';
-import Link from 'next/link';
-import { useChat, Message } from '@/app/contexts/ChatContext';
+"use client";
+import { useState } from "react";
+import styles from "./page.module.css";
+import Link from "next/link";
+import { useChat, Message } from "@/app/contexts/ChatContext";
 
 function AskPage() {
   const { messages, setMessages } = useChat();
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState("");
 
   const handleSend = async () => {
     if (!input.trim()) return;
 
-    const userMessage = { text: input, sender: 'user' };
-    setInput('');
+    const userMessage = { text: input, sender: "user" };
+    setInput("");
 
     setMessages((prevMessages: Message[]) => [...prevMessages, userMessage] as Message[]);
 
-    const res = await fetch('/api/ask', {
-      method: 'POST',
+    const res = await fetch("/api/ask", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({ message: input }),
     });
 
     const data = await res.json();
-    const botMessage = { text: data.reply, sender: 'bot' };
+    const botMessage = { text: data.reply, sender: "bot" };
 
     setMessages((prevMessages: Message[]) => [...prevMessages, botMessage] as Message[]);
   };
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
-    if (event.key === 'Enter' && !event.shiftKey) {
+    if (event.key === "Enter" && !event.shiftKey) {
       event.preventDefault();
       handleSend();
     }
@@ -44,7 +44,7 @@ function AskPage() {
           <div
             key={index}
             className={`${styles.message} ${
-              msg.sender === 'user' ? styles.userMessage : styles.botMessage
+              msg.sender === "user" ? styles.userMessage : styles.botMessage
             }`}
           >
             {msg.text}

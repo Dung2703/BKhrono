@@ -1,19 +1,17 @@
 :root {
-    --bg: #151c2c;
-    --bgSoft: #182237;
-    --bgButton: #1f2a47;
-    --text: white;
-    --textSoft: #b7bac1;
-
-}
-
-:root[data-theme='light'] {
     --bg: white;
     --bgSoft: #f0f0f0;
     --bgButton: #e0e0e0;
     --text: black;
     --textSoft: #5a5a5a;
+}
 
+:root[data-theme='dark'] {
+    --bg: #151c2c;
+    --bgSoft: #182237;
+    --bgButton: #1f2a47;
+    --text: white;
+    --textSoft: #b7bac1;
 }
 
 * {
@@ -58,4 +56,30 @@ a {
     .desktop-only {
         display: none;
     }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    padding: 4em;
+    gap: 4em;
+}
+
+.child {
+    flex: 1;
+    display: flex;
+}
+
+.footer {
+    border-top: 3px solid black;
+    background-color: var(--bgSoft);
+    padding: 1em 0;
 }

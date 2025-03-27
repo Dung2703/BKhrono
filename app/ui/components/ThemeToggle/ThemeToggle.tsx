@@ -1,5 +1,6 @@
+"use client"
 import React, { useState, useEffect } from 'react';
-import styles from './LogoSwitch.module.css';
+import styles from './ThemeToggle.module.css';
 
 const ThemeToggle: React.FC = () => {
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
