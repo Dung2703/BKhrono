@@ -13,7 +13,8 @@ const formattingInput = (data: string) => {
 		i = course.indexOf('Phiếu đăng ký')
 		courses[index] = course.slice(0, i)
 	})
-	
+	console.log("final:",courses);
+
 	return courses
 }
 
@@ -29,13 +30,14 @@ export const getClassesList = (data: string) => {
 		if (course.includes('_')) {
 			// Extract all subclasses from str (e.g., CC01_CC02, CC02_CC03)
 			const subclassMatches = str.match(/CC\d{2}_CC\d{2}/g) || [];
+			console.log("sub:",subclassMatches);
 
 			subclassMatches.forEach((subclass) => {
 
 				// Isolate the part of str specific to this subclass
 				const subclassStartIndex = str.indexOf(subclass);
-				const regex = /CC|DT|DTQ|L|CN|TN/g; // Match any of the keywords
-				const searchArea = str.slice(subclassStartIndex + 59, subclassStartIndex + 59+ 235); // Narrow the search area
+				const regex = /(CC|DT|DTQ|L|CN|TN)\d{2}/g; // Match any of the keywords
+				const searchArea = str.slice(subclassStartIndex + 61); // Narrow the search area
 
 				const match = searchArea.match(regex);
 
@@ -43,6 +45,8 @@ export const getClassesList = (data: string) => {
 
 
 				const subclassStr = str.slice(subclassStartIndex, subclassEndIndex);
+				console.log("substr:",subclassStr);
+
 				// Process this subclass with getClassLab
 				finalClasses.push(getClassLab(subclassStr, subject));
 			});
@@ -57,6 +61,7 @@ export const getClassesList = (data: string) => {
 			})
 		}
 	})
+	console.log("final:",finalClasses);
 	return finalClasses;
 }
 
