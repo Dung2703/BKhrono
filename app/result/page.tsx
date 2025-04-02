@@ -1,7 +1,6 @@
 "use client";
 import styles from "./page.module.css"
 import PriorityBar from "@/app/ui/result/PriorityBar/PriorityBar"
-// import TopBar from "@/app/ui/result/TopBar/TopBar"
 import ResultDisplay from "@/app/ui/result/ResultDisplay/ResultDisplay"
 import Generate from "@/app/ui/result/Generate/Generate";
 import { useState } from "react";
@@ -18,8 +17,7 @@ const ResultPage = () => {
         </div>
       </div>
       <div className={styles.resultSection}>
-        <div className={styles.topBar}>
-          {/* <TopBar /> */}
+        <div className={styles.generateButton}>
           <Generate isVisible={false} setSchedule={setSchedule} schedulePriorityStrings={schedulePriority}/> 
         </div>
         <div className={styles.resultDisplay}>

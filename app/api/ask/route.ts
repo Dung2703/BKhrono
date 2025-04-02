@@ -9,15 +9,18 @@ export async function POST(req: NextRequest) {
   const { message } = await req.json();
 
   const tutorialMsg = `
-    1. Go to myBK website to the DKMH (Đăng ký môn học) section
-    2. Find the course you want to register and click on it
-    3. When the list of classes appears, Ctrl + A then Ctrl + C to get the data
-    4. Paste the data into the text box with placeholder "Paste course data"
-    5. Click "Continue" button to go to the result page
-    6. Choose the time slots you prefer to study in 
-    7. Click "Generate" button to get the timetable 
-    8. You can click ".pdf file" or ".xlsx file" to download the timetable
-    9. If you want to generate a new timetable, click "Generate" button again
+    1.	Open myBK and navigate to section 12 (Đăng ký môn học) 
+    2.	Choose the appropriate registration session
+    3.	Find the course you want to register for and click on it
+    4.	When the list of available classes appears, press Ctrl + A to select all, then Ctrl + C to copy the data
+    5.	Paste the copied data into the input box labeled "Paste course data"
+    6.	Repeat the process for all courses you wish to register for. (Check the list of Course IDs on the left to ensure all courses are added)
+    7.	Click "Continue" to proceed to the result page
+    8.	Select your preferred timeslots for classes
+    9.	Click "Generate" to generate the timetable
+    10.	If you’re not satisfied with the result, click "Generate" again to generate a new timetable
+    Note: To remove any inputed data, please reload the page.
+          To view the tutorial video, click on the "Question Mark" icon on the right bar.
     `.trim();
 
   const systemPrompt = `

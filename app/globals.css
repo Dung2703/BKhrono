@@ -45,7 +45,7 @@ a {
 .content {
     flex: 1;
     display: flex;
-    padding: calc(2em + 2vw);
+    padding: calc(2em + 4vh);
     gap: calc(2em + 2vw);
 }
 
