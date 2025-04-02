@@ -62,7 +62,7 @@
 .videoContainer {
   position: relative;
   width: 80%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 80 / 43;
   overflow: hidden;
   border-radius: 50px;
 }

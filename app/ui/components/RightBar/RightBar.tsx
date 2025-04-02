@@ -24,9 +24,9 @@ function RightBar() {
           <div className={styles.videoContainer} onClick={(e) => e.stopPropagation()}>
             <button className={styles.closeButton} onClick={() => setShowVideo(false)}>✖</button>
             <iframe
-              src="https://www.youtube.com/embed/ROcups0YaHE"
+              src="https://www.youtube.com/embed/ZS1VPHduwN0"
               title="YouTube video"
-              frameBorder="0"
+              style={{ border: "none" }}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
