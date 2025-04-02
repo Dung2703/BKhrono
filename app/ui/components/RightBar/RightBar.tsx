@@ -23,10 +23,13 @@ function RightBar() {
         <div className={styles.videoOverlay} onClick={() => setShowVideo(false)}>
           <div className={styles.videoContainer} onClick={(e) => e.stopPropagation()}>
             <button className={styles.closeButton} onClick={() => setShowVideo(false)}>✖</button>
-            <video controls autoPlay className={styles.videoPlayer}>
-              <source src="/tutorial.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+            <iframe
+              src="https://www.youtube.com/embed/ROcups0YaHE"
+              title="YouTube video"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
           </div>
         </div>
       )}

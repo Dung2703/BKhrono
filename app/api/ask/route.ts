@@ -15,7 +15,7 @@ export async function POST(req: NextRequest) {
     4.	When the list of available classes appears, press Ctrl + A to select all, then Ctrl + C to copy the data
     5.	Paste the copied data into the input box labeled "Paste course data"
     6.	Repeat the process for all courses you wish to register for. (Check the list of Course IDs on the left to ensure all courses are added)
-    7.	Click "Continue" to proceed to the result page
+    7.	Click "Result" to proceed to the result page
     8.	Select your preferred timeslots for classes
     9.	Click "Generate" to generate the timetable
     10.	If you’re not satisfied with the result, click "Generate" again to generate a new timetable
