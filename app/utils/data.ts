@@ -13,7 +13,7 @@ const formattingInput = (data: string) => {
 		i = course.indexOf('Phiếu đăng ký')
 		courses[index] = course.slice(0, i)
 	})
-	
+
 	return courses
 }
 
@@ -34,8 +34,8 @@ export const getClassesList = (data: string) => {
 
 				// Isolate the part of str specific to this subclass
 				const subclassStartIndex = str.indexOf(subclass);
-				const regex = /CC|DT|DTQ|L|CN|TN/g; // Match any of the keywords
-				const searchArea = str.slice(subclassStartIndex + 59, subclassStartIndex + 59+ 235); // Narrow the search area
+				const regex = /(CC|DT|DTQ|L|CN|TN)\d{2}/g; // Match any of the keywords
+				const searchArea = str.slice(subclassStartIndex + 61); // Narrow the search area
 
 				const match = searchArea.match(regex);
 
@@ -43,6 +43,7 @@ export const getClassesList = (data: string) => {
 
 
 				const subclassStr = str.slice(subclassStartIndex, subclassEndIndex);
+
 				// Process this subclass with getClassLab
 				finalClasses.push(getClassLab(subclassStr, subject));
 			});
