@@ -7,6 +7,8 @@ import RightBar from "@/app/ui/components/RightBar/RightBar";
 import Footer from "@/app/ui/components/Footer/Footer";
 import "./globals.css";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -53,6 +55,8 @@ export default function RootLayout({
                 <CoursesProvider>
                   <SchedulePriorityProvider>
                     {children}
+                    <Analytics />
+                    <SpeedInsights />
                   </SchedulePriorityProvider>
                 </CoursesProvider>
               </ChatProvider>
