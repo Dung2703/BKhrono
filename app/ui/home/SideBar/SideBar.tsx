@@ -1,7 +1,6 @@
 import styles from './SideBar.module.css'
 import { removeCourse } from '@/app/utils/actions';
 import { subjectNames } from '@/app/utils/data';
-import { sub } from 'framer-motion/client';
 
 interface SideBarProps {
   courses: string[];
