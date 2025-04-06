@@ -39,6 +39,11 @@
     align-items: center;
 }
 
+.item:hover {
+    cursor: pointer;
+    text-decoration: line-through;
+}
+
 @media (max-width: 1240px) {
     .container, .list {
         flex-direction: row;

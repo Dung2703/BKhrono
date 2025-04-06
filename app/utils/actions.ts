@@ -10,7 +10,7 @@ const classes_lab: Class[] = [];
 
 
 
-export const setClassesArrays = (rawData: string) => {
+export const addCourse = (rawData: string) => {
   const classStrings = getClassesList(rawData);
   classStrings.forEach((classStr: string) => {
     const parsedClasses = parseClassString(classStr); // Parse the class string into objects
@@ -43,6 +43,13 @@ export const setClassesArrays = (rawData: string) => {
   // console.log("Lab Array:", classes_lab);
   return course_ids;
 };
+
+export const removeCourse = (course_id : string) => {
+  course_ids.splice(course_ids.indexOf(course_id), 1); // Remove course_id from the course_ids array
+  courses.splice(courses.findIndex((course) => course.course_id === course_id), 1); // Remove course from the courses array
+  classes_nonlab.splice(classes_nonlab.findIndex((course) => course.course_id === course_id), 1); // Remove course from the classes_nonlab array
+  classes_lab.splice(classes_lab.findIndex((course) => course.course_id === course_id), 1); // Remove course from the classes_lab array
+}
 
 export const getSchedule = (schedulePriority: SchedulePriority): string[][] => {
   // Create schedule 12 rows x 6 columns

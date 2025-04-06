@@ -13,7 +13,7 @@ export async function POST(req: NextRequest) {
     2.	Choose the appropriate registration session
     3.	Find the course you want to register for and click on it
     4.	When the list of available classes appears, press Ctrl + A to select all, then Ctrl + C to copy the data
-    5.	Paste the copied data into the input box labeled "Paste course data"
+    5.	Paste the copied data into the input box labeled with the instruction
     6.	Repeat the process for all courses you wish to register for. (Check the list of Course IDs on the left to ensure all courses are added)
     7.	Click "Result" to proceed to the result page
     8.	Select your preferred timeslots for classes

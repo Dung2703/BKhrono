@@ -5,9 +5,23 @@
     color: var(--textSoft);
     font-weight: bold;
     font-size: 2rem;
-    text-align: center;
     border-radius: 20px;
     width: 100%;
     height: 100%;
     resize: none;
+}
+
+.container::-webkit-scrollbar {
+    display: none;
+}
+
+.container:focus {
+    outline: none;
+    border: 3px solid var(--textSoft);
+}
+
+.container::placeholder {
+    color: var(--textSoft);
+    font-weight: bold;
+    font-size: 2rem;
 }

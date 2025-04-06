@@ -22,7 +22,7 @@ export const getClassesList = (data: string) => {
 	const courses: string[] = formattingInput(data)
 	courses.forEach((course) => {
 		const index = course.indexOf('Chọn môn học đăng ký')
-		const subject = course.slice(index + 21, index + 27)
+		const subject = course.slice(index + 21, index + 27).toUpperCase()
 		const splitData = course.split('Sĩ số LT	#\n')
 		const data: string = splitData[1] || ''
 		const str: string = data

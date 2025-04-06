@@ -10,8 +10,8 @@ interface NavButtonProps {
 
 function NavButton(props : NavButtonProps) {
   return (
-    <Link href={props.href} passHref target={props.target}>
-      <Image src={props.src} width={100} height={100} alt={props.alt} priority/>
+    <Link href={props.href} passHref target={props.target} title={props.alt}>
+      <Image src={props.src} width={100} height={100} alt={props.alt} priority />
     </Link>
   );
 }

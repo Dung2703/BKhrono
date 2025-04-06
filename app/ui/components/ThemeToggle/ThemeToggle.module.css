@@ -10,7 +10,6 @@
     display: inline-block;
     width: 80px;
     height: 40px;
-    background-color: var(--toggle-bg-color, #ffffff);
     border-radius: 20px;
     border: 2px solid;
     cursor: pointer;
@@ -27,15 +26,27 @@
 .switch.light {
     background-position:  80% center;
     background-color: #fffb00; /* Light mode background color */
-    border-color: black; /* Light mode border color */
+    border-color: white; /* Light mode border color */
     background-image: url('/cloud.webp'); /* Path to cloud icon */
+    transition: border-color 0.5s ease-in-out;
 }
 
 .switch.dark {
     background-position: 25% center;
     background-color: #000000; /* Dark mode background color */
-    border-color: white; /* Dark mode border color */
+    border-color: black; /* Dark mode border color */
     background-image: url('/stars.webp'); /* Path to star icon */
+    transition: border-color 0.5s ease-in-out;
+}
+
+.switch.dark:hover {
+    border-color: #fffb00;
+    transition: border-color 0.5s ease-in-out;
+}
+
+.switch.light:hover {
+    border-color: #000000;
+    transition: border-color 0.5s ease-in-out;
 }
 
 .slider {

@@ -10,7 +10,7 @@ const HomePage = () => {
   return (
     <div className={styles.container}>
       <div className={styles.sidebar}>
-        <SideBar courses={courses} />
+        <SideBar courses={courses} setCourses={setCourses} />
       </div>
       <div className={styles.inputSection}>
         <TextInputBox setCourses={setCourses} />
