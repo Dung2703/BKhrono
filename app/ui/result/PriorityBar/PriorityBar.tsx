@@ -4,7 +4,7 @@ import styles from './PriorityBar.module.css'
 import { useSchedulePriorityProps } from '@/app/utils/types'
 
 const PriorityBar = ({schedulePriority, setSchedulePriority} : useSchedulePriorityProps) => {
-  const dates = ['T2', 'T3', 'T4', 'T5', 'T6', 'T7'];
+  const dates = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
   const times = ['7-8h', '8-9h', '9-10h', '10-11h', '11-12h', '12-13h', '13-14h', '14-15h', '15-16h', '16-17h', '17-18h', '18-19h'];
   const [currentDate, setCurrentDate] = useState<string>('');
   const { monday, tuesday, wednesday, thursday, friday, saturday } = schedulePriority;
@@ -24,22 +24,22 @@ const PriorityBar = ({schedulePriority, setSchedulePriority} : useSchedulePriori
     }
 
     switch (currentDate) {
-      case 'T2':
+      case 'Mo':
         updateArray(monday, setMonday)
         break
-      case 'T3':
+      case 'Tu':
         updateArray(tuesday, setTuesday)
         break
-      case 'T4':
+      case 'We':
         updateArray(wednesday, setWednesday)
         break
-      case 'T5':
+      case 'Th':
         updateArray(thursday, setThursday)
         break
-      case 'T6':
+      case 'Fr':
         updateArray(friday, setFriday)
         break
-      case 'T7':
+      case 'Sa':
         updateArray(saturday, setSaturday)
         break
     }
@@ -52,17 +52,17 @@ const PriorityBar = ({schedulePriority, setSchedulePriority} : useSchedulePriori
     }
 
     switch (currentDate) {
-      case 'T2':
+      case 'Mo':
         return monday.includes(time)
-      case 'T3':
+      case 'Tu':
         return tuesday.includes(time)
-      case 'T4':
+      case 'We':
         return wednesday.includes(time)
-      case 'T5':
+      case 'Th':
         return thursday.includes(time)
-      case 'T6':
+      case 'Fr':
         return friday.includes(time)
-      case 'T7':
+      case 'Sa':
         return saturday.includes(time)
       default:
         return false
@@ -71,32 +71,32 @@ const PriorityBar = ({schedulePriority, setSchedulePriority} : useSchedulePriori
 
   const updateLayoutDay = (day : string) => {
     switch (day) {
-      case 'T2':
+      case 'Mo':
         if (monday.length > 0) {
           return true
         }
         return false
-      case 'T3':
+      case 'Tu':
         if (tuesday.length > 0) {
           return true
         }
         return false
-      case 'T4':
+      case 'We':
         if (wednesday.length > 0) {
           return true
         }
         return false
-      case 'T5':
+      case 'Th':
         if (thursday.length > 0) {
           return true
         }
         return false
-      case 'T6':
+      case 'Fr':
         if (friday.length > 0) {
           return true
         }
         return false
-      case 'T7':
+      case 'Sa':
         if (saturday.length > 0) {
           return true
         }
