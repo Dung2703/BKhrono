@@ -1,9 +1,3 @@
-export interface Course {
-  course_id: string;
-  class: string;
-  class_lab?: string;
-}
-
 export interface Class {
   type: string;
   course_id: string;

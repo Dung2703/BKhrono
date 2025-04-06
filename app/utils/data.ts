@@ -1,4 +1,9 @@
 import { Class, SchedulePriority } from "./types";
+//Arrays to be processed further
+export const course_ids: string[] = []; // Used to setCourses in SideBar
+export const subjectNames: string[] = [] // Used to setCourses in SideBar
+export const classes_nonlab: Class[] = [];
+export const classes_lab: Class[] = [];
 
 const formattingInput = (data: string) => {
 	const courses: string[] = data.split('Lịch đăng ký')
@@ -22,7 +27,9 @@ export const getClassesList = (data: string) => {
 	const courses: string[] = formattingInput(data)
 	courses.forEach((course) => {
 		const index = course.indexOf('Chọn môn học đăng ký')
-		const subject = course.slice(index + 21, index + 27).toUpperCase()
+		const course_id = course.slice(index + 21, index + 27).toUpperCase()
+		if (course_ids.includes(course_id)) return // Early return if the course is already in the array
+		subjectNames.push(course.slice(index + 79).split(/\t\d/)[0].trim());
 		const splitData = course.split('Sĩ số LT	#\n')
 		const data: string = splitData[1] || ''
 		const str: string = data
@@ -45,7 +52,7 @@ export const getClassesList = (data: string) => {
 				const subclassStr = str.slice(subclassStartIndex, subclassEndIndex);
 
 				// Process this subclass with getClassLab
-				finalClasses.push(getClassLab(subclassStr, subject));
+				finalClasses.push(getClassLab(subclassStr, course_id));
 			});
 		}
 			
@@ -54,7 +61,7 @@ export const getClassesList = (data: string) => {
 			const matches = [...str.matchAll(regex)]
 			const classes = matches.filter((_, i) => i % 2 == 0)
 			classes.forEach((subclass, i) => {
-				finalClasses.push(getClassNonLab(subclass, i, classes, subject))
+				finalClasses.push(getClassNonLab(subclass, i, classes, course_id))
 			})
 		}
 	})

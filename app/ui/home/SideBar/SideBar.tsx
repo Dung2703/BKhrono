@@ -1,5 +1,7 @@
 import styles from './SideBar.module.css'
 import { removeCourse } from '@/app/utils/actions';
+import { subjectNames } from '@/app/utils/data';
+import { sub } from 'framer-motion/client';
 
 interface SideBarProps {
   courses: string[];
@@ -8,6 +10,10 @@ interface SideBarProps {
 
 const SideBar = ({courses, setCourses} : SideBarProps) => {
   const handleRemoveCourse = (course: string) => {
+    const courseIndex = courses.indexOf(course);
+    if (courseIndex !== -1) {
+      subjectNames.splice(courseIndex, 1); // Remove the corresponding subject name
+    }
     setCourses(courses.filter((c) => c !== course));
     removeCourse(course); // Call the removeCourse function to update the global state
   }
@@ -18,7 +24,7 @@ const SideBar = ({courses, setCourses} : SideBarProps) => {
       <div className={styles.body}>
         <ul className={styles.list}>
           {courses.map((course, index) => (
-            <li key={index} className={styles.item} onClick={(course) => handleRemoveCourse(course.currentTarget.innerText)}>
+            <li key={index} className={styles.item} onClick={(course) => handleRemoveCourse(course.currentTarget.innerText)} title={subjectNames[index]}>
               {course}
             </li>
           ))}

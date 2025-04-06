@@ -1,27 +1,13 @@
 import { getClassesList, parseClassString, getClassesFromCourse, fillClasses } from "./data";
-import { Class, Course, SchedulePriority, SchedulePriorityStrings } from "./types";
-
-
-//Arrays to be processed further
-const course_ids: string[] = []; // Used to setCourses in SideBar
-const courses: Course[] = []; // Used to check if the class is already in the array
-const classes_nonlab: Class[] = [];
-const classes_lab: Class[] = [];
-
-
+import { Class, SchedulePriority, SchedulePriorityStrings } from "./types";
+import { classes_nonlab, classes_lab, course_ids, subjectNames } from "./data";
 
 export const addCourse = (rawData: string) => {
   const classStrings = getClassesList(rawData);
+  let course_added = false; // Flag to check if a course was added
   classStrings.forEach((classStr: string) => {
     const parsedClasses = parseClassString(classStr); // Parse the class string into objects
-    parsedClasses.forEach((classObj: Class) => {
-      // Check if the class is already in the array
-      if (
-          courses.some((course) => course.course_id === classObj.course_id && course.class === classObj.class && course.class_lab === classObj.class_lab)
-          || courses.some((course) => course.course_id === classObj.course_id && course.class === classObj.class && course.class_lab === undefined)
-         ) return;
-      courses.push({ course_id: classObj.course_id, class: classObj.class, class_lab: classObj.class_lab });
-      
+    parsedClasses.forEach((classObj: Class) => {      
       // Uncomment this if you want to check the max quantity of classes
       // if (classObj.current_quantity < classObj.max_quantity) {
         if (classObj.type === "non-lab") {
@@ -37,8 +23,11 @@ export const addCourse = (rawData: string) => {
         course_ids.push(classObj.course_id);
       }
     });
+    course_added = true; // Set the flag to true if a course was added
   });
-
+  if (!course_added) {
+    subjectNames.pop(); // Remove the last subject name if no course was added
+  }
   // console.log("Non-Lab Array:", classes_nonlab);
   // console.log("Lab Array:", classes_lab);
   return course_ids;
@@ -46,7 +35,7 @@ export const addCourse = (rawData: string) => {
 
 export const removeCourse = (course_id : string) => {
   course_ids.splice(course_ids.indexOf(course_id), 1); // Remove course_id from the course_ids array
-  courses.splice(courses.findIndex((course) => course.course_id === course_id), 1); // Remove course from the courses array
+  // courses.splice(courses.findIndex((course) => course.course_id === course_id), 1); // Remove course from the courses array
   classes_nonlab.splice(classes_nonlab.findIndex((course) => course.course_id === course_id), 1); // Remove course from the classes_nonlab array
   classes_lab.splice(classes_lab.findIndex((course) => course.course_id === course_id), 1); // Remove course from the classes_lab array
 }
